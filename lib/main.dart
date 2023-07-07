@@ -82,8 +82,16 @@ class LoginPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, '/about');
                 },
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.zero,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  minimumSize: const Size(double.infinity, 50),
+                ),
                 child: const Text('Sign In'),
               ),
+
               const SizedBox(height: 20), // Adding spacing
             ],
           ),
