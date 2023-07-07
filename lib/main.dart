@@ -13,15 +13,76 @@ class MyApp extends StatelessWidget {
       title: 'Navigation Example',
       initialRoute: '/',
       routes: {
-        '/': (context) => const LoginPage(),
+        '/': (context) => LoginPage(),
         '/about': (context) => const AboutPage(),
       },
     );
   }
 }
 
+class ButtonList extends StatelessWidget {
+  final List<ButtonConfig> buttons;
+
+  const ButtonList({Key? key, required this.buttons}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: buttons.map((button) {
+        return Container(
+          margin: const EdgeInsets.symmetric(vertical: 10),
+          child: ElevatedButton(
+            onPressed: button.onPress,
+            style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.zero,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                minimumSize: const Size(double.infinity, 50),
+                primary: Colors.white),
+            child: Text(
+              button.label,
+              style: const TextStyle(
+                color: Colors.blue,
+              ),
+            ),
+          ),
+        );
+      }).toList(),
+    );
+  }
+}
+
+class ButtonConfig {
+  final String label;
+  final VoidCallback onPress;
+
+  ButtonConfig({required this.label, required this.onPress});
+}
+
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  final List<ButtonConfig> buttonConfigs = [
+    ButtonConfig(
+      label: 'Sign in dengan Google',
+      onPress: () {
+        // Handle Google Sign In button press
+      },
+    ),
+    ButtonConfig(
+      label: 'Sign in dengan ID Karyawan',
+      onPress: () {
+        // Handle ID Karyawan Sign In button press
+      },
+    ),
+    ButtonConfig(
+      label: ' Sign in dengan nomor telepon ',
+      onPress: () {
+        // Handle ID Karyawan Sign In button press
+      },
+    ),
+  ];
+
+  LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -94,6 +155,7 @@ class LoginPage extends StatelessWidget {
                   child: const Text('Sign In'),
                 ),
               ),
+              ButtonList(buttons: buttonConfigs),
             ],
           ),
         ),
