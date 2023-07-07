@@ -47,6 +47,14 @@ class LoginPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(height: 10),
+              const Text(
+                'Silahkan masukkan Username dan Password Anda',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               const SizedBox(height: 20),
               TextFormField(
                 decoration: const InputDecoration(
@@ -79,6 +87,7 @@ class LoginPage extends StatelessWidget {
                 },
                 child: const Text('Login'),
               ),
+              const SizedBox(height: 20), // Adding spacing
             ],
           ),
         ),
