@@ -35,6 +35,11 @@ class LoginPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Image.asset(
+                'assets/aruna-logo.png',
+                height: 150,
+              ),
+              const SizedBox(height: 20),
               const Text(
                 'Login',
                 style: TextStyle(
