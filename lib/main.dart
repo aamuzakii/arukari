@@ -36,7 +36,7 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/aruna-icon.webp',
+                'assets/aruna-logo.png',
                 height: 150,
               ),
               const SizedBox(height: 20),
@@ -81,23 +81,11 @@ class LoginPage extends StatelessWidget {
                 obscureText: true,
               ),
               const SizedBox(height: 20),
-              InkWell(
-                onTap: () {
+              ElevatedButton(
+                onPressed: () {
                   Navigator.pushNamed(context, '/about');
                 },
-                child: Container(
-                  width: 60,
-                  height: 60,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.blue,
-                  ),
-                  child: const Icon(
-                    Icons.arrow_forward,
-                    color: Colors.white,
-                    size: 36,
-                  ),
-                ),
+                child: const Text('Login'),
               ),
               const SizedBox(height: 20), // Adding spacing
             ],
