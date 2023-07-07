@@ -26,9 +26,6 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -41,7 +38,7 @@ class LoginPage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               const Text(
-                'Login',
+                'Sign In',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -85,7 +82,7 @@ class LoginPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, '/about');
                 },
-                child: const Text('Login'),
+                child: const Text('Sign In'),
               ),
               const SizedBox(height: 20), // Adding spacing
             ],
