@@ -14,16 +14,16 @@ class DashboardPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'This is the DashboardPage Page.',
-                style: TextStyle(fontSize: 20),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.red,
               ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: const Text('Go Back'),
+              const SizedBox(height: 8),
+              Container(
+                width: 100,
+                height: 100,
+                color: Colors.red,
               ),
             ],
           ),
