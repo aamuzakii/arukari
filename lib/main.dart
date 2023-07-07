@@ -1,4 +1,4 @@
-import 'package:arukari/pages/home_pages.dart';
+import 'package:arukari/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
