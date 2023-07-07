@@ -7,7 +7,28 @@ class DashboardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('About'),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.email),
+            onPressed: () {
+              // Handle the action for icon1
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.email),
+            onPressed: () {
+              // Handle the action for icon2
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.email),
+            onPressed: () {
+              // Handle the action for icon3
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(
