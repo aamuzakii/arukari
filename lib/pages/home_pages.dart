@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/button.dart';
+import '../widgets/link_text.dart';
 
 class LoginPage extends StatelessWidget {
   final List<ButtonConfig> buttonConfigs = [
@@ -97,6 +98,10 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               ButtonList(buttons: buttonConfigs),
+              const LinkText(
+                text: "mama",
+                url: "https://github.com/",
+              )
             ],
           ),
         ),
