@@ -14,16 +14,20 @@ class DashboardPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
+              FractionallySizedBox(
+                widthFactor: 0.8,
+                child: Container(
+                  height: 100,
+                  color: Colors.red,
+                ),
               ),
               const SizedBox(height: 8),
-              Container(
-                width: 100,
-                height: 100,
-                color: Colors.red,
+              FractionallySizedBox(
+                widthFactor: 0.8,
+                child: Container(
+                  height: 100,
+                  color: Colors.red,
+                ),
               ),
             ],
           ),
