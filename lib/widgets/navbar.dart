@@ -12,23 +12,23 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       actions: [
         IconButton(
-          icon: const Icon(Icons.email),
-          onPressed: () {
-            // Handle the action for icon1
-          },
-        ),
+            icon: const Icon(Icons.email),
+            onPressed: () {
+              // Handle the action for icon1
+            },
+            color: Colors.grey),
         IconButton(
-          icon: const Icon(Icons.email),
-          onPressed: () {
-            // Handle the action for icon2
-          },
-        ),
+            icon: const Icon(Icons.email),
+            onPressed: () {
+              // Handle the action for icon1
+            },
+            color: Colors.grey),
         IconButton(
-          icon: const Icon(Icons.email),
-          onPressed: () {
-            // Handle the action for icon3
-          },
-        ),
+            icon: const Icon(Icons.email),
+            onPressed: () {
+              // Handle the action for icon1
+            },
+            color: Colors.grey),
       ],
     );
   }
