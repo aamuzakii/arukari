@@ -98,9 +98,19 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               ButtonList(buttons: buttonConfigs),
-              const LinkText(
-                text: "mama",
-                url: "https://github.com/",
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  LinkText(
+                    text: "Lupa password",
+                    url: "https://github.com/",
+                  ),
+                  Text("."),
+                  LinkText(
+                    text: "Buat akun demo",
+                    url: "https://github.com/",
+                  ),
+                ],
               )
             ],
           ),
