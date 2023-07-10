@@ -78,7 +78,10 @@ class LeftSidebar extends StatelessWidget {
               padding: const EdgeInsets.all(30),
               color: Colors.red,
               child: Column(
-                children: const [Text("Quick Links"), IconWithLink()],
+                children: const [
+                  Text("Quick Links"),
+                  IconWithLink(label: "mama")
+                ],
               ),
             ),
           ),
