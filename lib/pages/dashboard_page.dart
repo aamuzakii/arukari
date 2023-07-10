@@ -91,8 +91,18 @@ class LeftSidebar extends StatelessWidget {
             child: Container(
               width: double.infinity,
               padding: const EdgeInsets.all(30),
-              color: Colors.red,
-              child: const Text("ini isi"),
+              child: Column(
+                children: const [
+                  Text("Applications"),
+                  IconWithLink(label: "Forms", icon: Icons.email),
+                  IconWithLink(
+                      label: "Performance Review", icon: Icons.lock_clock),
+                  IconWithLink(label: "Insight", icon: Icons.lock_clock),
+                  IconWithLink(
+                      label: "Advance Recruitment", icon: Icons.lock_clock),
+                  IconWithLink(label: "Marketplace", icon: Icons.lock_clock),
+                ],
+              ),
             ),
           ),
           Expanded(
@@ -100,8 +110,13 @@ class LeftSidebar extends StatelessWidget {
             child: Container(
               width: double.infinity,
               padding: const EdgeInsets.all(30),
-              color: Colors.red,
-              child: const Text("ini isi"),
+              child: Column(
+                children: const [
+                  Text("Download Talenta Mobile"),
+                  IconWithLink(label: "App Store", icon: Icons.person),
+                  IconWithLink(label: "Google Play", icon: Icons.lock_clock),
+                ],
+              ),
             ),
           ),
         ],
