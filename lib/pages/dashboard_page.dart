@@ -76,7 +76,9 @@ class LeftSidebar extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.all(30),
               color: Colors.red,
-              child: const Text("ini isi"),
+              child: Column(
+                children: const [Text("Quick Links"), IconWithLink()],
+              ),
             ),
           ),
           Expanded(
@@ -99,6 +101,19 @@ class LeftSidebar extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class IconWithLink extends StatelessWidget {
+  const IconWithLink({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [Icon(Icons.email), Text("My Info")],
     );
   }
 }
