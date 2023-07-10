@@ -12,21 +12,19 @@ class LeftSidebar extends StatelessWidget {
       color: Colors.white,
       child: Column(
         children: [
-          Expanded(
-            flex: 1,
-            child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(30),
-              child: Column(
-                children: const [
-                  Text("Quick Links"),
-                  IconWithLink(label: "My Info", icon: Icons.person),
-                  IconWithLink(
-                      label: "My Attendance Logs", icon: Icons.lock_clock),
-                ],
-              ),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(24),
+            child: Column(
+              children: const [
+                Text("Quick Links"),
+                IconWithLink(label: "My Info", icon: Icons.person),
+                IconWithLink(
+                    label: "My Attendance Logs", icon: Icons.lock_clock),
+              ],
             ),
           ),
+          const ThinLine(),
           Expanded(
             flex: 1,
             child: Container(
@@ -46,6 +44,7 @@ class LeftSidebar extends StatelessWidget {
               ),
             ),
           ),
+          const ThinLine(),
           Expanded(
             flex: 1,
             child: Container(
@@ -62,6 +61,21 @@ class LeftSidebar extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class ThinLine extends StatelessWidget {
+  const ThinLine({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 1,
+      color: Colors.grey,
+      margin: const EdgeInsets.symmetric(horizontal: 20),
     );
   }
 }

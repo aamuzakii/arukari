@@ -17,6 +17,7 @@ class DashboardPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(height: 30),
               FractionallySizedBox(
                 widthFactor: 0.8,
                 child: Container(
@@ -32,7 +33,7 @@ class DashboardPage extends StatelessWidget {
                   const LeftSidebar(),
                   const SizedBox(width: 30),
                   Container(
-                    width: 300,
+                    width: 600,
                     height: 488,
                     color: Colors.white,
                   ),
