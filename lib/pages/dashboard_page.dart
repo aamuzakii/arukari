@@ -25,11 +25,7 @@ class DashboardPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    width: 300,
-                    height: 488,
-                    color: Colors.white,
-                  ),
+                  const LeftSidebar(),
                   const SizedBox(width: 30),
                   Container(
                     width: 300,
@@ -37,17 +33,43 @@ class DashboardPage extends StatelessWidget {
                     color: Colors.white,
                   ),
                   const SizedBox(width: 30),
-                  Container(
-                    width: 300,
-                    height: 488,
-                    color: Colors.white,
-                  ),
+                  RightSidebar(),
                 ],
               )
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class RightSidebar extends StatelessWidget {
+  const RightSidebar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 300,
+      height: 488,
+      color: Colors.white,
+    );
+  }
+}
+
+class LeftSidebar extends StatelessWidget {
+  const LeftSidebar({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 300,
+      height: 488,
+      color: Colors.white,
     );
   }
 }
