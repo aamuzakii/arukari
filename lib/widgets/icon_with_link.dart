@@ -6,14 +6,20 @@ class IconWithLink extends StatelessWidget {
   final String url;
   final IconData icon;
 
-  const IconWithLink(
-      {Key? key, required this.label, required this.icon, required this.url})
-      : super(key: key);
+  const IconWithLink({
+    Key? key,
+    required this.label,
+    required this.icon,
+    this.url = 'https://nextjs.org/', //  default value
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [Icon(icon), LinkText(text: label, url: url)],
+      children: [
+        Icon(icon),
+        LinkText(text: label, url: url),
+      ],
     );
   }
 }
