@@ -93,7 +93,15 @@ class RightSidebar extends StatelessWidget {
                   ),
                   const HalfTop()
                 ],
-              ))
+              )),
+          Container(
+            height: 1,
+            color: Colors.grey,
+            margin: const EdgeInsets.symmetric(horizontal: 20),
+          ),
+          Container(
+              margin: const EdgeInsets.all(20),
+              child: const LinkText(text: "View All")),
         ],
       ),
     );
