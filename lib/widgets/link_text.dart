@@ -9,7 +9,7 @@ class LinkText extends StatefulWidget {
   const LinkText({
     Key? key,
     required this.text,
-    required this.url,
+    this.url = 'https://nextjs.org/',
     this.color = Colors.blue,
   }) : super(key: key);
 

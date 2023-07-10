@@ -44,18 +44,3 @@ class DashboardPage extends StatelessWidget {
     );
   }
 }
-
-class RightSidebar extends StatelessWidget {
-  const RightSidebar({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 300,
-      height: 488,
-      color: Colors.white,
-    );
-  }
-}
