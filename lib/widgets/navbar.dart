@@ -34,7 +34,6 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

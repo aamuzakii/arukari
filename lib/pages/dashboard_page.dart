@@ -17,24 +17,30 @@ class DashboardPage extends StatelessWidget {
               FractionallySizedBox(
                 widthFactor: 0.8,
                 child: Container(
-                  height: 100,
-                  color: Colors.red,
+                  height: 208,
+                  color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.blue,
+                    width: 300,
+                    height: 488,
+                    color: Colors.white,
                   ),
-                  const SizedBox(width: 8),
+                  const SizedBox(width: 30),
                   Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.blue,
+                    width: 300,
+                    height: 488,
+                    color: Colors.white,
+                  ),
+                  const SizedBox(width: 30),
+                  Container(
+                    width: 300,
+                    height: 488,
+                    color: Colors.white,
                   ),
                 ],
               )
