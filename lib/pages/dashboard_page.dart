@@ -1,5 +1,6 @@
 import 'package:arukari/widgets/navbar.dart';
 import 'package:flutter/material.dart';
+import '../widgets/icon_with_link.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -33,7 +34,7 @@ class DashboardPage extends StatelessWidget {
                     color: Colors.white,
                   ),
                   const SizedBox(width: 30),
-                  RightSidebar(),
+                  const RightSidebar(),
                 ],
               )
             ],
@@ -101,19 +102,6 @@ class LeftSidebar extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class IconWithLink extends StatelessWidget {
-  const IconWithLink({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [Icon(Icons.email), Text("My Info")],
     );
   }
 }
