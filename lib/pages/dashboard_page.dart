@@ -80,7 +80,8 @@ class LeftSidebar extends StatelessWidget {
               child: Column(
                 children: const [
                   Text("Quick Links"),
-                  IconWithLink(label: "mama")
+                  IconWithLink(label: "mama", icon: Icons.person),
+                  IconWithLink(label: "cucu", icon: Icons.lock_clock),
                 ],
               ),
             ),
