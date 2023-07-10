@@ -1,6 +1,9 @@
+import 'dart:ffi';
+
 import 'package:arukari/widgets/link_text.dart';
 import 'package:flutter/material.dart';
 import '../widgets/icon_with_link.dart';
+import 'big_text.dart';
 
 class LeftSidebar extends StatelessWidget {
   const LeftSidebar({Key? key}) : super(key: key);
@@ -83,12 +86,12 @@ class RightSidebar extends StatelessWidget {
               padding: const EdgeInsets.all(30),
               child: Column(
                 children: [
-                  HalfTop(),
+                  const HalfTop(),
                   Container(
                     height: 50,
                     color: Colors.white,
                   ),
-                  HalfTop()
+                  const HalfTop()
                 ],
               ))
         ],
@@ -106,16 +109,14 @@ class HalfTop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: const [
-        Text("Sick Leave Used",
-            style: TextStyle(
-              fontWeight: FontWeight.w500,
-              fontSize: 16,
-            )),
-        Text("0 Day",
-            style: TextStyle(
-              fontWeight: FontWeight.w700,
-              fontSize: 24,
-            )),
+        BigText(
+          text: "Sick Leave Used",
+          fontSize: 15,
+        ),
+        BigText(
+          text: "0 Day",
+          fontSize: 24,
+        ),
         LinkText(text: "Request Sick Leave →")
       ],
     );
