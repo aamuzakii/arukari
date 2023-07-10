@@ -2,6 +2,8 @@ import 'package:arukari/widgets/navbar.dart';
 import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/right_sidebar.dart';
+
 class DashboardPage extends StatelessWidget {
   const DashboardPage({Key? key}) : super(key: key);
 
@@ -25,6 +27,7 @@ class DashboardPage extends StatelessWidget {
               const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const LeftSidebar(),
                   const SizedBox(width: 30),
@@ -34,7 +37,13 @@ class DashboardPage extends StatelessWidget {
                     color: Colors.white,
                   ),
                   const SizedBox(width: 30),
-                  const RightSidebar(),
+                  Column(
+                    children: const [
+                      RightSidebar(),
+                      SizedBox(height: 30),
+                      RightSidebar(),
+                    ],
+                  ),
                 ],
               )
             ],
