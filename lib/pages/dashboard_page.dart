@@ -60,9 +60,7 @@ class RightSidebar extends StatelessWidget {
 }
 
 class LeftSidebar extends StatelessWidget {
-  const LeftSidebar({
-    Key? key,
-  }) : super(key: key);
+  const LeftSidebar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +68,37 @@ class LeftSidebar extends StatelessWidget {
       width: 300,
       height: 488,
       color: Colors.white,
+      child: Column(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(30),
+              color: Colors.red,
+              child: const Text("ini isi"),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(30),
+              color: Colors.red,
+              child: const Text("ini isi"),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(30),
+              color: Colors.red,
+              child: const Text("ini isi"),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
