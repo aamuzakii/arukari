@@ -8,7 +8,7 @@ class IconWithLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: const [Icon(Icons.email), Text(label)],
+      children: [const Icon(Icons.email), Text(label)],
     );
   }
 }
