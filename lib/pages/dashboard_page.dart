@@ -22,13 +22,21 @@ class DashboardPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              FractionallySizedBox(
-                widthFactor: 0.8,
-                child: Container(
-                  height: 100,
-                  color: Colors.red,
-                ),
-              ),
+              Row(
+                children: [
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.blue,
+                  ),
+                  const SizedBox(width: 8),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    color: Colors.blue,
+                  ),
+                ],
+              )
             ],
           ),
         ),
