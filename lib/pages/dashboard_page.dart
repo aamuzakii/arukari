@@ -76,12 +76,12 @@ class LeftSidebar extends StatelessWidget {
             child: Container(
               width: double.infinity,
               padding: const EdgeInsets.all(30),
-              color: Colors.red,
               child: Column(
                 children: const [
                   Text("Quick Links"),
-                  IconWithLink(label: "mama", icon: Icons.person),
-                  IconWithLink(label: "cucu", icon: Icons.lock_clock),
+                  IconWithLink(label: "My Info", icon: Icons.person),
+                  IconWithLink(
+                      label: "My Attendance Logs", icon: Icons.lock_clock),
                 ],
               ),
             ),

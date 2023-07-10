@@ -4,18 +4,20 @@ import 'package:url_launcher/url_launcher.dart';
 class LinkText extends StatefulWidget {
   final String text;
   final String url;
+  final Color color;
 
   const LinkText({
     Key? key,
     required this.text,
     required this.url,
+    this.color = Colors.blue,
   }) : super(key: key);
 
   @override
-  _LinkTextState createState() => _LinkTextState();
+  LinkTextState createState() => LinkTextState();
 }
 
-class _LinkTextState extends State<LinkText> {
+class LinkTextState extends State<LinkText> {
   bool _isHovered = false;
 
   @override
@@ -32,7 +34,7 @@ class _LinkTextState extends State<LinkText> {
           style: TextStyle(
             decoration:
                 _isHovered ? TextDecoration.underline : TextDecoration.none,
-            color: Colors.blue,
+            color: widget.color,
           ),
         ),
       ),
