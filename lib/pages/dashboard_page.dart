@@ -2,6 +2,7 @@ import 'package:arukari/widgets/navbar.dart';
 import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/big_text.dart';
 import '../widgets/marseille.dart';
 import '../widgets/right_sidebar.dart';
 
@@ -46,14 +47,24 @@ class DashboardPage extends StatelessWidget {
                                 image: DecorationImage(
                                   image: AssetImage(
                                       "assets/images/banner-marketplace.png"),
-                                  fit: BoxFit
-                                      .cover, // Set BoxFit.cover to make the image cover the entire space
+                                  fit: BoxFit.fitHeight, //
                                 ),
                               ),
                             ),
-                            Container(
+                            SizedBox(
                               width: 400,
                               height: 165,
+                              child: Column(children: const [
+                                BigText(
+                                  text: "Introducing Mekari Marketplace",
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                ),
+                                BigText(
+                                    text:
+                                        "Find essential add-ons for Talenta to drive your productivity",
+                                    fontSize: 18),
+                              ]),
                             ),
                           ],
                         ),
