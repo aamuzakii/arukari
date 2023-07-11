@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class FilterSelectWidget extends StatefulWidget {
+  const FilterSelectWidget({Key? key}) : super(key: key);
+
   @override
   _FilterSelectWidgetState createState() => _FilterSelectWidgetState();
 }
@@ -19,9 +21,7 @@ class _FilterSelectWidgetState extends State<FilterSelectWidget> {
       child: Row(
         children: [
           const SizedBox(width: 16.0),
-          const Icon(Icons.filter_list, color: Colors.grey),
-          const SizedBox(width: 16.0),
-          Text(
+          const Text(
             'Filter',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),

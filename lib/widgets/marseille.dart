@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'filter.dart';
 
 class MyTabbedWidget extends StatefulWidget {
+  const MyTabbedWidget({Key? key}) : super(key: key);
+
   @override
   _MyTabbedWidgetState createState() => _MyTabbedWidgetState();
 }
@@ -42,7 +44,7 @@ class _MyTabbedWidgetState extends State<MyTabbedWidget>
         controller: _tabController,
         children: [
           Row(
-            children: [
+            children: const [
               Expanded(child: FilterSelectWidget()),
               Expanded(child: SearchBar()),
             ],

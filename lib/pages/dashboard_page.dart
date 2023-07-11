@@ -45,7 +45,7 @@ class DashboardPage extends StatelessWidget {
                         width: 600,
                         height: 257,
                         color: Colors.white,
-                        child: MyTabbedWidget(),
+                        child: const MyTabbedWidget(),
                       ),
                     ],
                   ),
