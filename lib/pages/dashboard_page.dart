@@ -82,11 +82,13 @@ class MiddleSection extends StatelessWidget {
                       "Introducing Mekari Marketplace",
                       14,
                       color: Colors.white,
+                      maxWidth: 300,
                     ),
                     BigText(
                       "Find essential add-ons for Talenta to drive your productivity",
                       18,
                       color: Colors.white,
+                      maxWidth: 300,
                     ),
                   ]),
                 ),
