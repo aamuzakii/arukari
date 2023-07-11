@@ -56,6 +56,8 @@ class LeftSidebar extends StatelessWidget {
                   Text("Download Talenta Mobile"),
                   IconWithLink(label: "App Store", icon: Icons.apple_sharp),
                   IconWithLink(label: "Google Play", icon: Icons.lock_clock),
+                  IconWithLink(
+                      label: "Google Play", icon: "assets/aruna-logo.png"),
                 ],
               ),
             ),
