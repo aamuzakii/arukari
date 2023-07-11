@@ -2,6 +2,7 @@ import 'package:arukari/widgets/navbar.dart';
 import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/marseille.dart';
 import '../widgets/right_sidebar.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -32,25 +33,47 @@ class DashboardPage extends StatelessWidget {
                 children: [
                   const LeftSidebar(),
                   const SizedBox(width: 30),
-                  Container(
-                    width: 600,
-                    height: 488,
-                    color: Colors.white,
-                  ),
-                  const SizedBox(width: 30),
                   Column(
-                    children: const [
-                      RightSidebar(),
-                      SizedBox(height: 30),
-                      RightSidebar(),
+                    children: [
+                      Container(
+                        width: 600,
+                        height: 165,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(height: 8),
+                      Container(
+                        width: 600,
+                        height: 257,
+                        color: Colors.white,
+                        child: MyTabbedWidget(),
+                      ),
                     ],
                   ),
+                  const SizedBox(width: 30),
+                  const RightSection(),
                 ],
               )
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class RightSection extends StatelessWidget {
+  const RightSection({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: const [
+        RightSidebar(),
+        SizedBox(height: 30),
+        RightSidebar(),
+      ],
     );
   }
 }
