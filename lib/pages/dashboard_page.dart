@@ -25,6 +25,53 @@ class DashboardPage extends StatelessWidget {
                 child: Container(
                   height: 208,
                   color: Colors.white,
+                  child: Row(children: [
+                    Container(
+                      child: Column(children: [
+                        BigText("Good afternoon, Abdullah Al Muzaki!", 25),
+                        Text("It's Tuesday, 11 July"),
+                        Text("Shortcut"),
+                        Container(
+                          child: GestureDetector(
+                            onTap: () {
+                              // Handle button tap
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20.0),
+                                border: Border.all(
+                                  color: Colors.black,
+                                  width: 1.0,
+                                ),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  'Button',
+                                  style: TextStyle(
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ]),
+                    ),
+                    Container(
+                      width: 200,
+                      height: 200,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image:
+                              AssetImage("assets/images/people-checking.png"),
+                          fit: BoxFit.fitHeight, //
+                        ),
+                      ),
+                    ),
+                  ]),
                 ),
               ),
               const SizedBox(height: 30),
@@ -62,7 +109,7 @@ class MiddleSection extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            color: Colors.purple,
+            color: const Color(0xff4b61dd),
             child: Row(
               children: [
                 Container(
@@ -80,13 +127,13 @@ class MiddleSection extends StatelessWidget {
                   child: Column(children: const [
                     BigText(
                       "Introducing Mekari Marketplace",
-                      14,
+                      12,
                       color: Colors.white,
                       maxWidth: 300,
                     ),
                     BigText(
                       "Find essential add-ons for Talenta to drive your productivity",
-                      18,
+                      16,
                       color: Colors.white,
                       maxWidth: 300,
                     ),
