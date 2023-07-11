@@ -51,18 +51,19 @@ class DashboardPage extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              width: 400,
-                              height: 165,
+                            Container(
+                              padding: const EdgeInsets.all(30),
                               child: Column(children: const [
                                 BigText(
                                   "Introducing Mekari Marketplace",
-                                  18,
+                                  14,
                                   color: Colors.white,
                                 ),
                                 BigText(
-                                    "Find essential add-ons for Talenta to drive your productivity",
-                                    18),
+                                  "Find essential add-ons for Talenta to drive your productivity",
+                                  18,
+                                  color: Colors.white,
+                                ),
                               ]),
                             ),
                           ],
