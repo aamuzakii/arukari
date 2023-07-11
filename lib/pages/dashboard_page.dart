@@ -1,7 +1,7 @@
 import 'package:arukari/widgets/navbar.dart';
 import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter/rendering.dart';
 import '../widgets/big_text.dart';
 import '../widgets/marseille.dart';
 import '../widgets/right_sidebar.dart';
@@ -71,34 +71,45 @@ class DashboardPage extends StatelessWidget {
   }
 }
 
-class WhiteRoundedButton extends StatelessWidget {
+class WhiteRoundedButton extends StatefulWidget {
   const WhiteRoundedButton({
     Key? key,
   }) : super(key: key);
 
   @override
+  _WhiteRoundedButtonState createState() => _WhiteRoundedButtonState();
+}
+
+class _WhiteRoundedButtonState extends State<WhiteRoundedButton> {
+  bool _isHovered = false;
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      child: GestureDetector(
-        onTap: () {
-          // Handle button tap
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.0),
-            border: Border.all(
-              color: Colors.black,
-              width: 1.0,
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: Container(
+        child: GestureDetector(
+          onTap: () {
+            // Handle button tap
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.0),
+              border: Border.all(
+                color: _isHovered ? Colors.blue : Colors.black,
+                width: 1.0,
+              ),
             ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              'Button',
-              style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Button',
+                style: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               ),
             ),
           ),
