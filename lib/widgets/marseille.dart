@@ -1,4 +1,7 @@
+import 'package:arukari/widgets/searchbar.dart';
 import 'package:flutter/material.dart';
+
+import 'filter.dart';
 
 class MyTabbedWidget extends StatefulWidget {
   @override
@@ -38,7 +41,12 @@ class _MyTabbedWidgetState extends State<MyTabbedWidget>
       body: TabBarView(
         controller: _tabController,
         children: [
-          const Center(child: Text('Content for Tab 1')),
+          Row(
+            children: [
+              Expanded(child: FilterSelectWidget()),
+              Expanded(child: SearchBar()),
+            ],
+          ),
           const Center(child: Text('Content for Tab 2')),
           const Center(child: Text('Content for Tab 3')),
         ],
