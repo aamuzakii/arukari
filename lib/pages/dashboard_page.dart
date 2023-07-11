@@ -56,14 +56,13 @@ class DashboardPage extends StatelessWidget {
                               height: 165,
                               child: Column(children: const [
                                 BigText(
-                                  text: "Introducing Mekari Marketplace",
-                                  fontSize: 18,
+                                  "Introducing Mekari Marketplace",
+                                  18,
                                   color: Colors.white,
                                 ),
                                 BigText(
-                                    text:
-                                        "Find essential add-ons for Talenta to drive your productivity",
-                                    fontSize: 18),
+                                    "Find essential add-ons for Talenta to drive your productivity",
+                                    18),
                               ]),
                             ),
                           ],

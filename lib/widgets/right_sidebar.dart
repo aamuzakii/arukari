@@ -50,12 +50,12 @@ class HalfTop extends StatelessWidget {
     return Column(
       children: const [
         BigText(
-          text: "Sick Leave Used",
-          fontSize: 15,
+          "Sick Leave Used",
+          15,
         ),
         BigText(
-          text: "0 Day",
-          fontSize: 24,
+          "0 Day",
+          24,
         ),
         LinkText(text: "Request Sick Leave →")
       ],
