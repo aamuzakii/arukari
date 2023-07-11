@@ -35,23 +35,25 @@ class DashboardPage extends StatelessWidget {
                   const SizedBox(width: 30),
                   Column(
                     children: [
-                      Row(
-                        children: [
-                          Container(
-                              width: 200,
-                              height: 200,
-                              decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets/images/banner-marketplace.png"),
-                                ),
-                              )),
-                          Container(
-                            width: 400,
-                            height: 165,
-                            color: Colors.red,
-                          ),
-                        ],
+                      Container(
+                        color: Colors.purple,
+                        child: Row(
+                          children: [
+                            Container(
+                                width: 200,
+                                height: 200,
+                                decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        "assets/images/banner-marketplace.png"),
+                                  ),
+                                )),
+                            Container(
+                              width: 400,
+                              height: 165,
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(height: 8),
                       Container(
