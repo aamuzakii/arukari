@@ -20,7 +20,7 @@ class LeftSidebar extends StatelessWidget {
                 Text("Quick Links"),
                 IconWithLink(label: "My Info", icon: Icons.person),
                 IconWithLink(
-                    label: "My Attendance Logs", icon: Icons.lock_clock),
+                    label: "My Attendance Logs", icon: Icons.access_time_sharp),
               ],
             ),
           ),
@@ -33,13 +33,14 @@ class LeftSidebar extends StatelessWidget {
               child: Column(
                 children: const [
                   Text("Applications"),
-                  IconWithLink(label: "Forms", icon: Icons.email),
                   IconWithLink(
-                      label: "Performance Review", icon: Icons.lock_clock),
+                      label: "Forms", icon: Icons.business_center_sharp),
+                  IconWithLink(
+                      label: "Performance Review", icon: Icons.bar_chart_sharp),
                   IconWithLink(label: "Insight", icon: Icons.lock_clock),
                   IconWithLink(
                       label: "Advance Recruitment", icon: Icons.lock_clock),
-                  IconWithLink(label: "Marketplace", icon: Icons.lock_clock),
+                  IconWithLink(label: "Marketplace", icon: Icons.apps_sharp),
                 ],
               ),
             ),
@@ -53,7 +54,7 @@ class LeftSidebar extends StatelessWidget {
               child: Column(
                 children: const [
                   Text("Download Talenta Mobile"),
-                  IconWithLink(label: "App Store", icon: Icons.person),
+                  IconWithLink(label: "App Store", icon: Icons.apple_sharp),
                   IconWithLink(label: "Google Play", icon: Icons.lock_clock),
                 ],
               ),
@@ -79,3 +80,4 @@ class ThinLine extends StatelessWidget {
     );
   }
 }
+// align_vertical_bottom_sharp, all_inbox_sharp, analytics_sharp
