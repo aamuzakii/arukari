@@ -40,14 +40,17 @@ class DashboardPage extends StatelessWidget {
                         child: Row(
                           children: [
                             Container(
-                                width: 200,
-                                height: 200,
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                        "assets/images/banner-marketplace.png"),
-                                  ),
-                                )),
+                              width: 200,
+                              height: 200,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      "assets/images/banner-marketplace.png"),
+                                  fit: BoxFit
+                                      .cover, // Set BoxFit.cover to make the image cover the entire space
+                                ),
+                              ),
+                            ),
                             Container(
                               width: 400,
                               height: 165,
