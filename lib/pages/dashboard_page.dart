@@ -88,6 +88,7 @@ class _WhiteRoundedButtonState extends State<WhiteRoundedButton> {
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
+      cursor: _isHovered ? SystemMouseCursors.click : SystemMouseCursors.basic,
       child: Container(
         child: GestureDetector(
           onTap: () {
