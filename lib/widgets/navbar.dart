@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/rendering.dart';
 
 class Navbar extends StatelessWidget implements PreferredSizeWidget {
   const Navbar({
@@ -12,12 +13,27 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       elevation: 0,
       actions: [
-        Container(
-          width: 24,
-          child: SvgPicture.asset(
-            'assets/svg/colorful.svg', // Replace with your SVG file path or asset path
-            width: 200, // Specify the desired width
-            height: 200, // Specify the desired height
+        MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: InkWell(
+            onTap: () {
+              // Handle button tap
+            },
+            onHover: (value) {
+              // Handle hover state changes
+            },
+            child: Container(
+              width: 24,
+              decoration: BoxDecoration(
+                // color: Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: SvgPicture.asset(
+                'assets/svg/colorful.svg',
+                width: 200,
+                height: 200,
+              ),
+            ),
           ),
         ),
         IconButton(
