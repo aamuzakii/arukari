@@ -3,6 +3,7 @@ import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../widgets/big_text.dart';
+import '../widgets/zerg.dart';
 import '../widgets/marseille.dart';
 import '../widgets/right_sidebar.dart';
 
@@ -45,7 +46,27 @@ class DashboardPage extends StatelessWidget {
 }
 
 class LucyWidget extends StatelessWidget {
-  const LucyWidget({
+  final List<ButtonConfig> buttonConfigs = [
+    ButtonConfig(
+      label: 'Sign in dengan Google',
+      onPress: () {
+        // Handle Google Sign In button press
+      },
+    ),
+    ButtonConfig(
+      label: 'Sign in dengan ID Karyawan',
+      onPress: () {
+        // Handle ID Karyawan Sign In button press
+      },
+    ),
+    ButtonConfig(
+      label: ' Sign in dengan nomor telepon ',
+      onPress: () {
+        // Handle ID Karyawan Sign In button press
+      },
+    ),
+  ];
+  LucyWidget({
     Key? key,
   }) : super(key: key);
 
@@ -62,7 +83,7 @@ class LucyWidget extends StatelessWidget {
               BigText("Good afternoon, Abdullah Al Muzaki!", 25),
               Text("It's Tuesday, 11 July"),
               Text("Shortcut"),
-              WhiteRoundedButton(),
+              ButtonList(buttons: buttonConfigs),
             ]),
           ),
           Container(

@@ -7,26 +7,11 @@ class ButtonList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: buttons.map((button) {
         return Container(
-          margin: const EdgeInsets.symmetric(vertical: 10),
-          child: ElevatedButton(
-            onPressed: button.onPress,
-            style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.zero,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                minimumSize: const Size(double.infinity, 50),
-                primary: Colors.white),
-            child: Text(
-              button.label,
-              style: const TextStyle(
-                color: Colors.blue,
-              ),
-            ),
-          ),
+          // margin: const EdgeInsets.symmetric(vertical: 10),
+          child: Text("data"),
         );
       }).toList(),
     );
