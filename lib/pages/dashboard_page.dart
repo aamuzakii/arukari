@@ -13,7 +13,7 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const Navbar(),
+      appBar: Navbar(),
       body: Container(
         color: Colors.grey[200], // Adjust the shade of grey as needed
         child: Center(
