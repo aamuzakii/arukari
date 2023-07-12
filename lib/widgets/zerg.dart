@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../pages/dashboard_page.dart';
+import 'filter.dart';
 
 class ButtonList extends StatelessWidget {
   final List<ButtonConfig> buttons;
@@ -9,14 +10,17 @@ class ButtonList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: buttons.map((button) {
-        return Container(
-          margin: const EdgeInsets.symmetric(horizontal: 3),
-          child: WhiteRoundedButton(
-            label: button.label,
-          ),
-        );
-      }).toList(),
+      children: [
+        ...buttons.map((button) {
+          return Container(
+            margin: const EdgeInsets.symmetric(horizontal: 3),
+            child: WhiteRoundedButton(
+              label: button.label,
+            ),
+          );
+        }).toList(),
+        const Text('More request'), // Add the Text widget here
+      ],
     );
   }
 }

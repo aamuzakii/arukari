@@ -138,7 +138,7 @@ class _WhiteRoundedButtonState extends State<WhiteRoundedButton> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.0),
             border: Border.all(
-              color: _isHovered ? Colors.blue : Colors.black,
+              color: _isHovered ? Colors.blue : const Color(0xffe2e2e2),
               width: 1.0,
             ),
           ),
