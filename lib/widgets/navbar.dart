@@ -13,7 +13,7 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       actions: [
         SvgPicture.asset(
-          'assets/images/example.svg', // Replace with your SVG file path or asset path
+          'assets/svg/colorful.svg', // Replace with your SVG file path or asset path
           width: 200, // Specify the desired width
           height: 200, // Specify the desired height
         ),

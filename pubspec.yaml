@@ -57,7 +57,7 @@ flutter:
     - assets/aruna-logo.png
     - assets/images/banner-marketplace.png
     - assets/images/people-checking.png
-    - assets/images/example.svg
+    - assets/svg/colorful.svg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
