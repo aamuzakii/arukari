@@ -25,39 +25,32 @@ class LeftSidebar extends StatelessWidget {
             ),
           ),
           const ThinLine(),
-          Expanded(
-            flex: 1,
-            child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(30),
-              child: Column(
-                children: const [
-                  Text("Applications"),
-                  IconWithLink(
-                      label: "Forms", icon: Icons.business_center_sharp),
-                  IconWithLink(
-                      label: "Performance Review", icon: Icons.bar_chart_sharp),
-                  IconWithLink(label: "Insight", icon: Icons.lock_clock),
-                  IconWithLink(
-                      label: "Advance Recruitment", icon: Icons.lock_clock),
-                  IconWithLink(label: "Marketplace", icon: Icons.apps_sharp),
-                ],
-              ),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(30),
+            child: Column(
+              children: const [
+                Text("Applications"),
+                IconWithLink(label: "Forms", icon: Icons.business_center_sharp),
+                IconWithLink(
+                    label: "Performance Review", icon: Icons.bar_chart_sharp),
+                IconWithLink(label: "Insight", icon: Icons.lock_clock),
+                IconWithLink(
+                    label: "Advance Recruitment", icon: Icons.lock_clock),
+                IconWithLink(label: "Marketplace", icon: Icons.apps_sharp),
+              ],
             ),
           ),
           const ThinLine(),
-          Expanded(
-            flex: 1,
-            child: Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(30),
-              child: Column(
-                children: const [
-                  Text("Download Talenta Mobile"),
-                  IconWithLink(label: "App Store", icon: Icons.apple_sharp),
-                  IconWithLink(label: "Google Play", icon: Icons.lock_clock),
-                ],
-              ),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(30),
+            child: Column(
+              children: const [
+                Text("Download Talenta Mobile"),
+                IconWithLink(label: "App Store", icon: Icons.apple_sharp),
+                IconWithLink(label: "Google Play", icon: Icons.lock_clock),
+              ],
             ),
           ),
         ],
