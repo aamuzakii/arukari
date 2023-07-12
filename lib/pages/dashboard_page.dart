@@ -4,7 +4,7 @@ import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../widgets/big_text.dart';
-import '../widgets/zerg.dart';
+import '../widgets/button_list.dart';
 import '../widgets/marseille.dart';
 import '../widgets/right_sidebar.dart';
 

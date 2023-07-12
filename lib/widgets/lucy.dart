@@ -1,5 +1,5 @@
 import 'package:arukari/widgets/big_text.dart';
-import 'package:arukari/widgets/zerg.dart';
+import 'package:arukari/widgets/button_list.dart';
 import 'package:flutter/material.dart';
 
 class LucyWidget extends StatelessWidget {
