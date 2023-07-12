@@ -12,10 +12,13 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       elevation: 0,
       actions: [
-        SvgPicture.asset(
-          'assets/svg/colorful.svg', // Replace with your SVG file path or asset path
-          width: 200, // Specify the desired width
-          height: 200, // Specify the desired height
+        Container(
+          width: 24,
+          child: SvgPicture.asset(
+            'assets/svg/colorful.svg', // Replace with your SVG file path or asset path
+            width: 200, // Specify the desired width
+            height: 200, // Specify the desired height
+          ),
         ),
         IconButton(
             icon: const Icon(Icons.email),
