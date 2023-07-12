@@ -1,6 +1,7 @@
 import 'package:arukari/pages/dashboard_page.dart';
 import 'package:arukari/pages/live_attendance_page.dart';
 import 'package:arukari/pages/login_page.dart';
+import 'package:arukari/widgets/scrollable.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/about': (context) => const AboutPage(),
         '/dashboard': (context) => const DashboardPage(),
         '/live-attendance': (context) => const LiveAttendancePage(),
+        '/foo': (context) => const CustomScrollViewWidget(),
       },
     );
   }

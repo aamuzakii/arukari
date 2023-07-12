@@ -1,5 +1,5 @@
 import 'package:arukari/widgets/big_text.dart';
-import 'package:arukari/widgets/marseille.dart';
+import 'package:arukari/widgets/tabbed_widget.dart';
 import 'package:flutter/material.dart';
 
 class MiddleSection extends StatelessWidget {

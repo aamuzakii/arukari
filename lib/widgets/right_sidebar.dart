@@ -1,3 +1,4 @@
+import 'package:arukari/widgets/scrollable.dart';
 import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
 
@@ -30,9 +31,6 @@ class RightSidebar extends StatelessWidget {
                 ],
               )),
           const ThinLine(),
-          Container(
-              margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-              child: const LinkText(text: "View All")),
         ],
       ),
     );
