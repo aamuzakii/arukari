@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/icon_with_link.dart';
+import 'big_text.dart';
 
 class LeftSidebar extends StatelessWidget {
   const LeftSidebar({Key? key}) : super(key: key);
@@ -16,10 +17,14 @@ class LeftSidebar extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(24),
             child: Column(
-              children: const [
-                Text("Quick Links"),
-                IconWithLink(label: "My Info", icon: Icons.person),
-                IconWithLink(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                    margin: const EdgeInsets.only(bottom: 8),
+                    child: BigText("Quick Links", 14,
+                        fontWeight: FontWeight.w700)),
+                const IconWithLink(label: "My Info", icon: Icons.person),
+                const IconWithLink(
                     label: "My Attendance Logs", icon: Icons.access_time_sharp),
               ],
             ),
@@ -29,6 +34,7 @@ class LeftSidebar extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(30),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text("Applications"),
                 IconWithLink(label: "Forms", icon: Icons.business_center_sharp),
@@ -46,6 +52,7 @@ class LeftSidebar extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(30),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text("Download Talenta Mobile"),
                 IconWithLink(label: "App Store", icon: Icons.apple_sharp),

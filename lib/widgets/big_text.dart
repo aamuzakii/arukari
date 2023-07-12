@@ -5,6 +5,7 @@ class BigText extends StatelessWidget {
   final double fontSize;
   final Color color;
   final dynamic maxWidth;
+  final FontWeight fontWeight;
 
   const BigText(
     this.text,
@@ -12,6 +13,7 @@ class BigText extends StatelessWidget {
     Key? key,
     this.color = Colors.black,
     this.maxWidth,
+    this.fontWeight = FontWeight.w500,
   }) : super(key: key);
 
   @override
@@ -22,7 +24,7 @@ class BigText extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          fontWeight: FontWeight.w500,
+          fontWeight: fontWeight,
           fontSize: fontSize,
           color: color,
         ),
