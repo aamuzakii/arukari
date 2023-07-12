@@ -15,7 +15,12 @@ class IconWithLink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Widget iconWidget = icon is IconData ? Icon(icon) : _buildImageIcon();
+    final Widget iconWidget = icon is IconData
+        ? Icon(
+            icon,
+            color: const Color(0xff777777),
+          )
+        : _buildImageIcon();
 
     return Row(
       children: [

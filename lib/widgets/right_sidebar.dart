@@ -9,7 +9,7 @@ class RightSidebar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
+      width: 270, // ini PENYAKIT, KELEBARAN,
       color: Colors.white,
       child: Column(
         children: [
