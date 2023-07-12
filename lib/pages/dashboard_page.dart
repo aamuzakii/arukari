@@ -93,9 +93,11 @@ class LucyWidget extends StatelessWidget {
               ButtonList(buttons: buttonConfigs),
             ]),
           ),
+          const Expanded(child: SizedBox(width: 16)),
           Container(
-            width: 200,
-            height: 200,
+            width: 210,
+            height: 210,
+            margin: const EdgeInsets.symmetric(horizontal: 34.0),
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/images/people-checking.png"),
