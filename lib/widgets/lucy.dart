@@ -37,8 +37,12 @@ class LucyWidget extends StatelessWidget {
         child: Row(children: [
           Container(
             padding: const EdgeInsets.all(24.0),
-            child: Column(children: [
-              BigText("Good afternoon, Abdullah Al Muzaki!", 25),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              const BigText(
+                "Good afternoon, Abdullah Al Muzaki!",
+                25,
+              ),
               Text("It's Tuesday, 11 July"),
               Container(
                 height: 32,

@@ -67,9 +67,8 @@ class ThinLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 1,
-      color: Colors.grey,
-      margin: const EdgeInsets.symmetric(horizontal: 20),
+      height: 0.3,
+      color: const Color(0xff777777),
     );
   }
 }
