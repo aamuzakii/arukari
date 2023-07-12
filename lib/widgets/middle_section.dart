@@ -19,7 +19,7 @@ class MiddleSection extends StatelessWidget {
               children: [
                 Container(
                   width: 200,
-                  height: 200,
+                  height: 164,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage("assets/images/banner-marketplace.png"),

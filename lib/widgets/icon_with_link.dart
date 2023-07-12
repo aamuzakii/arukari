@@ -25,10 +25,13 @@ class IconWithLink extends StatelessWidget {
     return Row(
       children: [
         iconWidget,
-        LinkText(
-          text: label,
-          url: url,
-          color: const Color(0xff777777),
+        Container(
+          margin: const EdgeInsets.symmetric(horizontal: 8),
+          child: LinkText(
+            text: label,
+            url: url,
+            color: const Color(0xff777777),
+          ),
         ),
       ],
     );

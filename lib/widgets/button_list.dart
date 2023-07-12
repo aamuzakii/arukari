@@ -1,7 +1,5 @@
 import 'package:arukari/widgets/lucy.dart';
 import 'package:flutter/material.dart';
-import '../pages/dashboard_page.dart';
-import 'filter.dart';
 
 class ButtonList extends StatelessWidget {
   final List<ButtonConfig> buttons;

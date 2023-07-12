@@ -1,3 +1,4 @@
+import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
 
 import 'big_text.dart';
@@ -12,27 +13,25 @@ class RightSidebar extends StatelessWidget {
       width: 270, // ini PENYAKIT, KELEBARAN,
       color: Colors.white,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(30),
+              padding: const EdgeInsets.all(24),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const HalfTop(),
                   Container(
-                    height: 50,
+                    height: 32,
                     color: Colors.white,
                   ),
                   const HalfTop()
                 ],
               )),
+          const ThinLine(),
           Container(
-            height: 1,
-            color: Colors.grey,
-            margin: const EdgeInsets.symmetric(horizontal: 20),
-          ),
-          Container(
-              margin: const EdgeInsets.all(20),
+              margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
               child: const LinkText(text: "View All")),
         ],
       ),
@@ -48,6 +47,7 @@ class HalfTop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: const [
         BigText(
           "Sick Leave Used",
