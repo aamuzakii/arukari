@@ -20,34 +20,7 @@ class DashboardPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 30),
-              FractionallySizedBox(
-                widthFactor: 0.8,
-                child: Container(
-                  height: 208,
-                  color: Colors.white,
-                  child: Row(children: [
-                    Container(
-                      child: Column(children: [
-                        BigText("Good afternoon, Abdullah Al Muzaki!", 25),
-                        Text("It's Tuesday, 11 July"),
-                        Text("Shortcut"),
-                        WhiteRoundedButton(),
-                      ]),
-                    ),
-                    Container(
-                      width: 200,
-                      height: 200,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image:
-                              AssetImage("assets/images/people-checking.png"),
-                          fit: BoxFit.fitHeight, //
-                        ),
-                      ),
-                    ),
-                  ]),
-                ),
-              ),
+              LucyWidget(),
               const SizedBox(height: 30),
               FractionallySizedBox(
                 widthFactor: 0.67,
@@ -66,6 +39,43 @@ class DashboardPage extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class LucyWidget extends StatelessWidget {
+  const LucyWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FractionallySizedBox(
+      widthFactor: 0.8,
+      child: Container(
+        height: 208,
+        color: Colors.white,
+        child: Row(children: [
+          Container(
+            child: Column(children: [
+              BigText("Good afternoon, Abdullah Al Muzaki!", 25),
+              Text("It's Tuesday, 11 July"),
+              Text("Shortcut"),
+              WhiteRoundedButton(),
+            ]),
+          ),
+          Container(
+            width: 200,
+            height: 200,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/people-checking.png"),
+                fit: BoxFit.fitHeight, //
+              ),
+            ),
+          ),
+        ]),
       ),
     );
   }
