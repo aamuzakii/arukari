@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../pages/dashboard_page.dart';
 
 class ButtonList extends StatelessWidget {
   final List<ButtonConfig> buttons;
@@ -10,8 +11,10 @@ class ButtonList extends StatelessWidget {
     return Row(
       children: buttons.map((button) {
         return Container(
-          // margin: const EdgeInsets.symmetric(vertical: 10),
-          child: Text("data"),
+          margin: const EdgeInsets.symmetric(horizontal: 3),
+          child: WhiteRoundedButton(
+            label: button.label,
+          ),
         );
       }).toList(),
     );

@@ -48,19 +48,19 @@ class DashboardPage extends StatelessWidget {
 class LucyWidget extends StatelessWidget {
   final List<ButtonConfig> buttonConfigs = [
     ButtonConfig(
-      label: 'Sign in dengan Google',
+      label: 'Live attendance',
       onPress: () {
         // Handle Google Sign In button press
       },
     ),
     ButtonConfig(
-      label: 'Sign in dengan ID Karyawan',
+      label: 'Request reimbursement',
       onPress: () {
         // Handle ID Karyawan Sign In button press
       },
     ),
     ButtonConfig(
-      label: ' Sign in dengan nomor telepon ',
+      label: ' Request time off',
       onPress: () {
         // Handle ID Karyawan Sign In button press
       },
@@ -79,10 +79,17 @@ class LucyWidget extends StatelessWidget {
         color: Colors.white,
         child: Row(children: [
           Container(
+            padding: const EdgeInsets.all(24.0),
             child: Column(children: [
               BigText("Good afternoon, Abdullah Al Muzaki!", 25),
               Text("It's Tuesday, 11 July"),
-              Text("Shortcut"),
+              Container(
+                height: 32,
+              ),
+              Container(
+                padding: const EdgeInsets.only(bottom: 12.0),
+                child: const Text("Shortcut"),
+              ),
               ButtonList(buttons: buttonConfigs),
             ]),
           ),
@@ -103,8 +110,11 @@ class LucyWidget extends StatelessWidget {
 }
 
 class WhiteRoundedButton extends StatefulWidget {
+  final String label;
+
   const WhiteRoundedButton({
     Key? key,
+    required this.label,
   }) : super(key: key);
 
   @override
@@ -120,28 +130,28 @@ class _WhiteRoundedButtonState extends State<WhiteRoundedButton> {
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
       cursor: _isHovered ? SystemMouseCursors.click : SystemMouseCursors.basic,
-      child: Container(
-        child: GestureDetector(
-          onTap: () {
-            // Handle button tap
-          },
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20.0),
-              border: Border.all(
-                color: _isHovered ? Colors.blue : Colors.black,
-                width: 1.0,
-              ),
+      child: GestureDetector(
+        onTap: () {
+          // Handle button tap
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            border: Border.all(
+              color: _isHovered ? Colors.blue : Colors.black,
+              width: 1.0,
             ),
-            child: const Padding(
-              padding: EdgeInsets.all(5.0),
-              child: Text(
-                'Button',
-                style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black,
-                ),
+          ),
+          child: Padding(
+            // padding: EdgeInsets.all(5.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
+            child: Text(
+              widget.label,
+              style: const TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.w500,
+                color: Colors.black,
               ),
             ),
           ),
