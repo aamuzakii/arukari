@@ -24,12 +24,14 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       elevation: 0,
       actions: [
-        IconButton(
-            icon: const Icon(Icons.email),
-            onPressed: () {
-              // Handle the action for icon1
-            },
-            color: Colors.grey),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Image.asset(
+            'assets/aruna-logo.png',
+            // height: 150,
+            width: 80,
+          ),
+        ),
         ButtonList(buttons: buttonConfigs),
         const Expanded(child: SizedBox(width: 16)),
         MouseRegion(

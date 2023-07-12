@@ -17,11 +17,19 @@ class ButtonList extends StatelessWidget {
                 // window.open('/login', '_blank');
                 Navigator.pushNamed(context, button.url);
               },
-              child: Text(button.label),
+              style: TextButton.styleFrom(
+                primary: const Color(0xff212121),
+              ),
+              child: Text(
+                button.label,
+                style: const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w400, // Sets the text to thin
+                ),
+              ),
             ),
           );
         }).toList(),
-        const Text('More request'), // Add the Text widget here
       ],
     );
   }
