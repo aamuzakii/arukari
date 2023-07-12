@@ -102,13 +102,13 @@ class _WhiteRoundedButtonState extends State<WhiteRoundedButton> {
                 width: 1.0,
               ),
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
+            child: const Padding(
+              padding: EdgeInsets.all(5.0),
               child: Text(
                 'Button',
                 style: TextStyle(
                   fontSize: 16.0,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w500,
                   color: Colors.black,
                 ),
               ),

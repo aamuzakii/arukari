@@ -1,4 +1,5 @@
 import 'package:arukari/pages/dashboard_page.dart';
+import 'package:arukari/pages/live_attendance_page.dart';
 import 'package:arukari/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => LoginPage(),
         '/about': (context) => const AboutPage(),
         '/dashboard': (context) => const DashboardPage(),
+        '/live-attendance': (context) => const LiveAttendancePage(),
       },
     );
   }
