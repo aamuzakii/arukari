@@ -3,32 +3,33 @@ import 'package:arukari/widgets/button_list.dart';
 import 'package:flutter/material.dart';
 
 class LucyWidget extends StatelessWidget {
-  final List<ButtonConfig> buttonConfigs = [
-    ButtonConfig(
-      label: 'Live attendance',
-      onPress: () {
-        // Handle Google Sign In button press
-      },
-    ),
-    ButtonConfig(
-      label: 'Request reimbursement',
-      onPress: () {
-        // Handle ID Karyawan Sign In button press
-      },
-    ),
-    ButtonConfig(
-      label: ' Request time off',
-      onPress: () {
-        // Handle ID Karyawan Sign In button press
-      },
-    ),
-  ];
-  LucyWidget({
+  const LucyWidget({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final List<ButtonConfig> buttonConfigs = [
+      ButtonConfig(
+        label: 'Live attendance',
+        onPress: () {
+          Navigator.pushNamed(context, '/login');
+        },
+      ),
+      ButtonConfig(
+        label: 'Request reimbursement',
+        onPress: () {
+          // Handle ID Karyawan Sign In button press
+        },
+      ),
+      ButtonConfig(
+        label: ' Request time off',
+        onPress: () {
+          // Handle ID Karyawan Sign In button press
+        },
+      ),
+    ];
+
     return FractionallySizedBox(
       widthFactor: 0.8,
       child: Container(
@@ -74,10 +75,12 @@ class LucyWidget extends StatelessWidget {
 
 class WhiteRoundedButton extends StatefulWidget {
   final String label;
+  final VoidCallback onPress;
 
   const WhiteRoundedButton({
     Key? key,
     required this.label,
+    required this.onPress,
   }) : super(key: key);
 
   @override
@@ -95,7 +98,7 @@ class _WhiteRoundedButtonState extends State<WhiteRoundedButton> {
       cursor: _isHovered ? SystemMouseCursors.click : SystemMouseCursors.basic,
       child: GestureDetector(
         onTap: () {
-          // Handle button tap
+          widget.onPress;
         },
         child: Container(
           decoration: BoxDecoration(

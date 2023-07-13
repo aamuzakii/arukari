@@ -15,6 +15,7 @@ class ButtonList extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 3),
             child: WhiteRoundedButton(
               label: button.label,
+              onPress: button.onPress,
             ),
           );
         }).toList(),
