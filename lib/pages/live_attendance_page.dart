@@ -34,10 +34,11 @@ class LiveAttendancePage extends StatelessWidget {
                       padding: EdgeInsets.symmetric(vertical: 24.0),
                       // horizontal: 24.0
                       child: Column(children: [
-                        BigText("11:35 AM", 24, fontWeight: FontWeight.w900),
+                        const BigText("11:35 AM", 24,
+                            fontWeight: FontWeight.w900),
                         Text("Thu, 13 Jul 2023"),
                         const SizedBox(height: 24),
-                        ThinLine(),
+                        const ThinLine(),
                         const SizedBox(height: 24),
                         Text("Schedule, 13 Jul 2023"),
                         Text("N"),
@@ -126,33 +127,41 @@ class _MyTextFieldState extends State<MyTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) {
-        setState(() {
-          _isHovered = true;
-        });
-      },
-      onExit: (_) {
-        setState(() {
-          _isHovered = false;
-        });
-      },
-      child: FocusScope(
-        child: TextField(
-          focusNode: _focusNode,
-          maxLines: null,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.purple,
+    return Container(
+      margin: const EdgeInsets.all(24),
+      child: MouseRegion(
+        onEnter: (_) {
+          setState(() {
+            _isHovered = true;
+          });
+        },
+        onExit: (_) {
+          setState(() {
+            _isHovered = false;
+          });
+        },
+        child: FocusScope(
+          child: TextField(
+            focusNode: _focusNode,
+            maxLines: null,
+            decoration: InputDecoration(
+              border: const OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.green,
+                ),
               ),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.red,
+              focusedBorder: const OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Colors.blue,
+                ),
               ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: _isHovered ? Colors.blue : const Color(0xffe2e2e2),
+                ),
+              ),
+              hintText: 'Enter your paragraph',
             ),
-            hintText: 'Enter your paragraph',
           ),
         ),
       ),
