@@ -34,13 +34,16 @@ class LiveAttendancePage extends StatelessWidget {
                       padding: EdgeInsets.symmetric(vertical: 24.0),
                       // horizontal: 24.0
                       child: Column(children: [
-                        BigText("11:35 AM", 24),
+                        BigText("11:35 AM", 24, fontWeight: FontWeight.w900),
                         Text("Thu, 13 Jul 2023"),
+                        const SizedBox(height: 24),
                         ThinLine(),
+                        const SizedBox(height: 24),
                         Text("Schedule, 13 Jul 2023"),
                         Text("N"),
-                        BigText("09:00 AM - 06:00 PM", 20),
-                        Text("Notes"),
+                        BigText("09:00 AM - 06:00 PM", 20,
+                            fontWeight: FontWeight.w700),
+                        MyTextField(),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -86,6 +89,58 @@ class ClockInOutButton extends StatelessWidget {
         primary: const Color(0xff005fbf), // Set background color to red
         textStyle: const TextStyle(
           fontWeight: FontWeight.w300, // Set text weight to thin
+        ),
+      ),
+    );
+  }
+}
+
+class MyTextField extends StatefulWidget {
+  @override
+  _MyTextFieldState createState() => _MyTextFieldState();
+}
+
+class _MyTextFieldState extends State<MyTextField> {
+  final FocusNode _focusNode = FocusNode();
+  bool _isFocused = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _focusNode.addListener(_handleFocusChange);
+  }
+
+  @override
+  void dispose() {
+    _focusNode.removeListener(_handleFocusChange);
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  void _handleFocusChange() {
+    setState(() {
+      _isFocused = _focusNode.hasFocus;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FocusScope(
+      child: TextField(
+        focusNode: _focusNode,
+        maxLines: null,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: _isFocused ? Colors.blue : Colors.grey,
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.blue,
+            ),
+          ),
+          hintText: 'Enter your paragraph',
         ),
       ),
     );
