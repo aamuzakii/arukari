@@ -14,59 +14,72 @@ class LiveAttendancePage extends StatelessWidget {
         color: Colors.grey[200],
         child: Center(
           child: Container(
-            margin: const EdgeInsets.all(30),
-            width: double.infinity,
-            color: Colors.white,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const BigText('Live Attendance', 32,
-                    fontWeight: FontWeight.w700),
-                const SizedBox(height: 20),
-                IntrinsicWidth(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: const Color(0xffe2e2e2),
-                        width: 1.0,
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 24.0),
-                      // horizontal: 24.0
-                      child: Column(children: [
-                        const BigText("11:35 AM", 24,
-                            fontWeight: FontWeight.w900),
-                        Text("Thu, 13 Jul 2023"),
-                        const SizedBox(height: 24),
-                        const ThinLine(),
-                        const SizedBox(height: 24),
-                        Text("Schedule, 13 Jul 2023"),
-                        Text("N"),
-                        BigText("09:00 AM - 06:00 PM", 20,
-                            fontWeight: FontWeight.w700),
-                        MyTextField(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            SizedBox(width: 24),
-                            ClockInOutButton(),
-                            SizedBox(width: 24),
-                            ClockInOutButton(),
-                            SizedBox(width: 24),
-                          ],
-                        ),
-                      ]),
+              margin: const EdgeInsets.all(30),
+              width: double.infinity,
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: const BigText(
+                      'Live Attendance',
+                      32,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
-                ),
-                const Text(
-                  'Attendance log',
-                  style: TextStyle(fontSize: 20),
-                ),
-              ],
-            ),
-          ),
+                  const SizedBox(height: 20),
+                  IntrinsicWidth(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: const Color(0xffe2e2e2),
+                          width: 1.0,
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 24.0),
+                        // horizontal: 24.0
+                        child: Column(
+                          children: [
+                            const BigText(
+                              "11:35 AM",
+                              24,
+                              fontWeight: FontWeight.w900,
+                            ),
+                            Text("Thu, 13 Jul 2023"),
+                            const SizedBox(height: 24),
+                            const ThinLine(),
+                            const SizedBox(height: 24),
+                            Text("Schedule, 13 Jul 2023"),
+                            Text("N"),
+                            BigText(
+                              "09:00 AM - 06:00 PM",
+                              20,
+                              fontWeight: FontWeight.w700,
+                            ),
+                            MyTextField(),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: const [
+                                SizedBox(width: 24),
+                                ClockInOutButton(),
+                                SizedBox(width: 24),
+                                ClockInOutButton(),
+                                SizedBox(width: 24),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Text(
+                    'Attendance log',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ],
+              )),
         ),
       ),
     );
