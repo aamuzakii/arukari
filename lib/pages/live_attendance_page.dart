@@ -14,13 +14,14 @@ class LiveAttendancePage extends StatelessWidget {
         color: Colors.grey[200],
         child: Center(
           child: Container(
-            margin: EdgeInsets.all(30),
+            margin: const EdgeInsets.all(30),
             width: double.infinity,
             color: Colors.white,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const BigText('Live Attendance', 32),
+                const BigText('Live Attendance', 32,
+                    fontWeight: FontWeight.w700),
                 const SizedBox(height: 20),
                 IntrinsicWidth(
                   child: Container(
@@ -31,7 +32,7 @@ class LiveAttendancePage extends StatelessWidget {
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 24.0),
+                      padding: const EdgeInsets.symmetric(vertical: 24.0),
                       // horizontal: 24.0
                       child: Column(children: [
                         const BigText("11:35 AM", 24,
@@ -47,12 +48,12 @@ class LiveAttendancePage extends StatelessWidget {
                         MyTextField(),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const SizedBox(width: 24),
+                          children: const [
+                            SizedBox(width: 24),
                             ClockInOutButton(),
-                            const SizedBox(width: 24),
+                            SizedBox(width: 24),
                             ClockInOutButton(),
-                            const SizedBox(width: 24),
+                            SizedBox(width: 24),
                           ],
                         ),
                       ]),
