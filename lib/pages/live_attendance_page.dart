@@ -18,14 +18,18 @@ class LiveAttendancePage extends StatelessWidget {
               width: double.infinity,
               color: Colors.white,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: const BigText(
-                      'Live Attendance',
-                      32,
-                      fontWeight: FontWeight.w700,
+                  Container(
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 24, vertical: 14),
+                    child: const Align(
+                      alignment: Alignment.centerLeft,
+                      child: BigText(
+                        'Live Attendance',
+                        28,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -99,7 +103,7 @@ class ClockInOutButton extends StatelessWidget {
       },
       child: const Text('Clock In'),
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: 110.0, vertical: 19.0),
+        padding: const EdgeInsets.symmetric(horizontal: 110.0, vertical: 19.0),
         elevation: 0, // Set elevation to 0 to remove shadow
         primary: const Color(0xff005fbf), // Set background color to red
         textStyle: const TextStyle(
@@ -174,7 +178,7 @@ class _MyTextFieldState extends State<MyTextField> {
                   color: _isHovered ? Colors.blue : const Color(0xffe2e2e2),
                 ),
               ),
-              hintText: 'Enter your paragraph',
+              hintText: 'Notes',
             ),
           ),
         ),
