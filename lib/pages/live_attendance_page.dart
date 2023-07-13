@@ -1,3 +1,4 @@
+import 'package:arukari/widgets/big_text.dart';
 import 'package:arukari/widgets/navbar.dart';
 import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
@@ -19,37 +20,39 @@ class LiveAttendancePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  'Live Attendance',
-                  style: TextStyle(fontSize: 20),
-                ),
+                const BigText('Live Attendance', 32),
                 const SizedBox(height: 20),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: const Color(0xffe2e2e2),
-                      width: 1.0,
-                    ),
-                  ),
-                  child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 24.0, horizontal: 24.0),
-                    child: Column(children: [
-                      Text("11:35 AM"),
-                      Text("Thu, 13 Jul 2023"),
-                      ThinLine(),
-                      Text("Schedule, 13 Jul 2023"),
-                      Text("N"),
-                      Text("09:00 AM - 06:00 PM"),
-                      Text("Notes"),
-                      Row(
-                        children: [
-                          ClockInOutButton(),
-                          const SizedBox(width: 24),
-                          ClockInOutButton(),
-                        ],
+                IntrinsicWidth(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: const Color(0xffe2e2e2),
+                        width: 1.0,
                       ),
-                    ]),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 24.0),
+                      // horizontal: 24.0
+                      child: Column(children: [
+                        BigText("11:35 AM", 24),
+                        Text("Thu, 13 Jul 2023"),
+                        ThinLine(),
+                        Text("Schedule, 13 Jul 2023"),
+                        Text("N"),
+                        BigText("09:00 AM - 06:00 PM", 20),
+                        Text("Notes"),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const SizedBox(width: 24),
+                            ClockInOutButton(),
+                            const SizedBox(width: 24),
+                            ClockInOutButton(),
+                            const SizedBox(width: 24),
+                          ],
+                        ),
+                      ]),
+                    ),
                   ),
                 ),
                 const Text(
