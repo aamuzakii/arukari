@@ -159,26 +159,32 @@ class _MyTextFieldState extends State<MyTextField> {
           });
         },
         child: FocusScope(
-          child: TextField(
-            focusNode: _focusNode,
-            maxLines: null,
-            decoration: InputDecoration(
-              border: const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.green,
+          child: Expanded(
+            child: SizedBox(
+              height: 70.0,
+              child: TextField(
+                focusNode: _focusNode,
+                maxLines: null,
+                expands: true,
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.green,
+                    ),
+                  ),
+                  focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.blue,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: _isHovered ? Colors.blue : const Color(0xffe2e2e2),
+                    ),
+                  ),
+                  hintText: 'Notes',
                 ),
               ),
-              focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Colors.blue,
-                ),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: _isHovered ? Colors.blue : const Color(0xffe2e2e2),
-                ),
-              ),
-              hintText: 'Notes',
             ),
           ),
         ),
