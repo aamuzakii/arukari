@@ -103,6 +103,7 @@ class MyTextField extends StatefulWidget {
 class _MyTextFieldState extends State<MyTextField> {
   final FocusNode _focusNode = FocusNode();
   bool _isFocused = false;
+  bool _isHovered = false;
 
   @override
   void initState() {
@@ -125,22 +126,34 @@ class _MyTextFieldState extends State<MyTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return FocusScope(
-      child: TextField(
-        focusNode: _focusNode,
-        maxLines: null,
-        decoration: InputDecoration(
-          border: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: _isFocused ? Colors.blue : Colors.grey,
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          _isHovered = true;
+        });
+      },
+      onExit: (_) {
+        setState(() {
+          _isHovered = false;
+        });
+      },
+      child: FocusScope(
+        child: TextField(
+          focusNode: _focusNode,
+          maxLines: null,
+          decoration: InputDecoration(
+            border: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.purple,
+              ),
             ),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.blue,
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.red,
+              ),
             ),
+            hintText: 'Enter your paragraph',
           ),
-          hintText: 'Enter your paragraph',
         ),
       ),
     );
