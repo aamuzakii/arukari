@@ -13,7 +13,7 @@ class LucyWidget extends StatelessWidget {
       ButtonConfig(
         label: 'Live attendance',
         onPress: () {
-          Navigator.pushNamed(context, '/login');
+          Navigator.pushNamed(context, '/live-attendance');
         },
       ),
       ButtonConfig(
@@ -96,9 +96,9 @@ class _WhiteRoundedButtonState extends State<WhiteRoundedButton> {
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
       cursor: _isHovered ? SystemMouseCursors.click : SystemMouseCursors.basic,
-      child: GestureDetector(
+      child: InkWell(
         onTap: () {
-          widget.onPress;
+          widget.onPress();
         },
         child: Container(
           decoration: BoxDecoration(
@@ -109,7 +109,6 @@ class _WhiteRoundedButtonState extends State<WhiteRoundedButton> {
             ),
           ),
           child: Padding(
-            // padding: EdgeInsets.all(5.0),
             padding:
                 const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
             child: Text(

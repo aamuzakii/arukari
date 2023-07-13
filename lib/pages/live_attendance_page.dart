@@ -1,3 +1,4 @@
+import 'package:arukari/widgets/navbar.dart';
 import 'package:flutter/material.dart';
 
 class LiveAttendancePage extends StatelessWidget {
@@ -6,25 +7,39 @@ class LiveAttendancePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('About'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'This is the About Page.',
-              style: TextStyle(fontSize: 20),
+      appBar: Navbar(),
+      body: Container(
+        color: Colors.grey[200],
+        child: Center(
+          child: Container(
+            margin: EdgeInsets.all(30),
+            width: double.infinity,
+            color: Colors.white,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Live Attendance',
+                  style: TextStyle(fontSize: 20),
+                ),
+                const SizedBox(height: 20),
+                const Text(
+                  'Live Attendance',
+                  style: TextStyle(fontSize: 20),
+                ),
+                const Text(
+                  'Attendance log',
+                  style: TextStyle(fontSize: 20),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text('Go Back'),
+                ),
+              ],
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text('Go Back'),
-            ),
-          ],
+          ),
         ),
       ),
     );
