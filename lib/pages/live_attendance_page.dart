@@ -86,14 +86,31 @@ class LiveAttendancePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                        const BigText(
                           'Attendance log',
-                          style: TextStyle(fontSize: 20),
+                          17,
+                          fontWeight: FontWeight.w700,
                         ),
-                        const Text(
-                          'Attendance log',
-                          style: TextStyle(fontSize: 20),
-                        ),
+                        Container(
+                          width: double.infinity,
+                          child: Row(
+                            children: [
+                              Container(
+                                  width: 107,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text("09:08 AM"),
+                                      Text("14 Jul"),
+                                    ],
+                                  )),
+                              Expanded(child: Text("Clock In")),
+                              Text("Detail")
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   ),
