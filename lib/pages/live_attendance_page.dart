@@ -86,13 +86,16 @@ class LiveAttendancePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const BigText(
-                          'Attendance log',
-                          17,
-                          fontWeight: FontWeight.w700,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 20.0),
+                          child: const BigText(
+                            'Attendance log',
+                            17,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                         ClockLog(),
-                        ClockLog(),
+                        ThinLine(),
                         ClockLog(),
                       ],
                     ),
@@ -113,15 +116,16 @@ class ClockLog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 40,
-      margin: EdgeInsets.symmetric(vertical: 17),
+      // height: 40,
+      margin: EdgeInsets.symmetric(vertical: 10),
       width: double.infinity,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
               width: 107,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("09:08 AM"),
