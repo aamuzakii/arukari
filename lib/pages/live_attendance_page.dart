@@ -172,14 +172,16 @@ class _MyTextFieldState extends State<MyTextField> {
                       color: Colors.green,
                     ),
                   ),
-                  focusedBorder: const OutlineInputBorder(
+                  focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.blue,
+                      color: Colors.blue.shade900,
                     ),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: _isHovered ? Colors.blue : const Color(0xffe2e2e2),
+                      color: _isHovered
+                          ? Colors.blue.shade900
+                          : const Color(0xffe2e2e2),
                     ),
                   ),
                   hintText: 'Notes',
