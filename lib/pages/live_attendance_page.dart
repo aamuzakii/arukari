@@ -1,3 +1,4 @@
+import 'package:arukari/helper/constants.dart';
 import 'package:arukari/widgets/big_text.dart';
 import 'package:arukari/widgets/navbar.dart';
 import 'package:arukari/widgets/sidebar.dart';
@@ -35,6 +36,7 @@ class LiveAttendancePage extends StatelessWidget {
                   const SizedBox(height: 20),
                   IntrinsicWidth(
                     child: Container(
+                      width: Constants.liveAttendanceWidth,
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: const Color(0xffe2e2e2),
@@ -78,9 +80,22 @@ class LiveAttendancePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Text(
-                    'Attendance log',
-                    style: TextStyle(fontSize: 20),
+                  Container(
+                    width: Constants.liveAttendanceWidth,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Attendance log',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        const Text(
+                          'Attendance log',
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               )),
