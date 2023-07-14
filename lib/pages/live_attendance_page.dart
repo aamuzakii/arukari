@@ -91,32 +91,46 @@ class LiveAttendancePage extends StatelessWidget {
                           17,
                           fontWeight: FontWeight.w700,
                         ),
-                        Container(
-                          width: double.infinity,
-                          child: Row(
-                            children: [
-                              Container(
-                                  width: 107,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text("09:08 AM"),
-                                      Text("14 Jul"),
-                                    ],
-                                  )),
-                              Expanded(child: Text("Clock In")),
-                              Text("Detail")
-                            ],
-                          ),
-                        )
+                        ClockLog(),
+                        ClockLog(),
+                        ClockLog(),
                       ],
                     ),
                   ),
                 ],
               )),
         ),
+      ),
+    );
+  }
+}
+
+class ClockLog extends StatelessWidget {
+  const ClockLog({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 40,
+      margin: EdgeInsets.symmetric(vertical: 17),
+      width: double.infinity,
+      child: Row(
+        children: [
+          Container(
+              width: 107,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("09:08 AM"),
+                  Text("14 Jul"),
+                ],
+              )),
+          Expanded(child: Text("Clock In")),
+          Text("Detail")
+        ],
       ),
     );
   }
