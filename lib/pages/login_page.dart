@@ -1,3 +1,4 @@
+import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
 import '../widgets/button.dart';
 import '../widgets/link_text.dart';
@@ -35,7 +36,7 @@ class LoginPage extends StatelessWidget {
           child: IntrinsicHeight(
             child: Container(
               color: Colors.white,
-              width: 400,
+              width: 440,
               child: Center(
                 child: Padding(
                   padding:
@@ -105,6 +106,18 @@ class LoginPage extends StatelessWidget {
                             minimumSize: const Size(double.infinity, 50),
                           ),
                           child: const Text('Sign In'),
+                        ),
+                      ),
+                      Container(
+                        width: 360,
+                        child: Row(
+                          children: [
+                            Expanded(child: ThinLine()),
+                            Container(
+                                margin: EdgeInsets.symmetric(horizontal: 24),
+                                child: Text("atau")),
+                            Expanded(child: ThinLine()),
+                          ],
                         ),
                       ),
                       ButtonList(buttons: buttonConfigs),
