@@ -108,15 +108,21 @@ class LoginPage extends StatelessWidget {
                           child: const Text('Sign In'),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: 360,
                         child: Row(
                           children: [
-                            Expanded(child: ThinLine()),
+                            const Expanded(child: ThinLine()),
                             Container(
-                                margin: EdgeInsets.symmetric(horizontal: 24),
-                                child: Text("atau")),
-                            Expanded(child: ThinLine()),
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 24),
+                                child: const Text(
+                                  "atau",
+                                  style: TextStyle(
+                                    color: Color(0xffb4b4b4),
+                                  ),
+                                )),
+                            const Expanded(child: ThinLine()),
                           ],
                         ),
                       ),
