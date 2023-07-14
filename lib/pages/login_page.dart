@@ -35,33 +35,36 @@ class LoginPage extends StatelessWidget {
           child: IntrinsicHeight(
             child: Container(
               color: Colors.white,
-              width: 360,
+              width: 400,
               child: Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 32, horizontal: 40),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(
-                        'assets/aruna-logo.png',
-                        height: 150,
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Image.asset(
+                          'assets/aruna-logo.png',
+                          height: 37,
+                        ),
                       ),
                       const SizedBox(height: 20),
-                      const Text(
-                        'Sign In',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
+                      const Align(
+                        alignment: Alignment.topLeft,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 15),
+                          child: Text(
+                            'Sign In',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ),
                       const SizedBox(height: 10),
-                      const Text(
-                        'Silahkan masukkan Username dan Password Anda',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
                       const SizedBox(height: 20),
                       TextFormField(
                         decoration: const InputDecoration(
@@ -105,19 +108,22 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       ButtonList(buttons: buttonConfigs),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          LinkText(
-                            text: "Lupa password",
-                            url: "https://github.com/",
-                          ),
-                          Text("."),
-                          LinkText(
-                            text: "Buat akun demo",
-                            url: "https://github.com/",
-                          ),
-                        ],
+                      Container(
+                        margin: const EdgeInsets.symmetric(vertical: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            LinkText(
+                              text: "Lupa password",
+                              url: "https://github.com/",
+                            ),
+                            Text("."),
+                            LinkText(
+                              text: "Buat akun demo",
+                              url: "https://github.com/",
+                            ),
+                          ],
+                        ),
                       )
                     ],
                   ),
