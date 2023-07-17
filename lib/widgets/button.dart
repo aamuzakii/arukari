@@ -29,13 +29,15 @@ class ButtonList extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  'assets/svg/google.svg',
-                  width: 20,
-                  height: 20,
-                ),
-                const SizedBox(
-                    width: 8), // Adjust the spacing between the icon and text
+                if (button.label.contains('Google'))
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: SvgPicture.asset(
+                      'assets/svg/google.svg',
+                      width: 20,
+                      height: 20,
+                    ),
+                  ),
                 Text(
                   button.label,
                   style: const TextStyle(
