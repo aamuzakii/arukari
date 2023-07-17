@@ -33,133 +33,174 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         color: Colors.grey[200],
-        child: Center(
-          child: IntrinsicHeight(
-            child: Container(
-              color: Colors.white,
-              width: 440,
-              child: Center(
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 32, horizontal: 40),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Align(
-                        alignment: Alignment.topLeft,
-                        child: Image.asset(
-                          'assets/aruna-logo.png',
-                          height: 37,
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      const Align(
-                        alignment: Alignment.topLeft,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(vertical: 15),
-                          child: Text(
-                            'Sign in',
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      const SizedBox(height: 20),
-                      TextFormField(
-                        decoration: const InputDecoration(
-                          labelText: 'Username',
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.black,
-                              width: 2.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      TextFormField(
-                        decoration: const InputDecoration(
-                          labelText: 'Password',
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.black,
-                              width: 2.0,
-                            ),
-                          ),
-                        ),
-                        obscureText: true,
-                      ),
-                      const SizedBox(height: 20),
-                      Container(
-                          margin: const EdgeInsets.symmetric(vertical: 10),
-                          child: TextButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, '/dashboard');
-                            },
-                            style: TextButton.styleFrom(
-                              textStyle:
-                                  const TextStyle(fontWeight: FontWeight.w300),
-                              padding: EdgeInsets.zero,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                                side: const BorderSide(
-                                    color: Constants.darkBlueLogin),
-                              ),
-                              minimumSize: const Size(double.infinity, 50),
-                              backgroundColor: Constants.darkBlueLogin,
-                            ),
-                            child: const Text(
-                              'Sign in',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                          )),
-                      SizedBox(
-                        width: 360,
-                        child: Row(
-                          children: [
-                            const Expanded(child: ThinLine()),
-                            Container(
-                                margin:
-                                    const EdgeInsets.symmetric(horizontal: 24),
-                                child: const Text(
-                                  "atau",
-                                  style: TextStyle(
-                                    color: Color(0xffb4b4b4),
-                                  ),
-                                )),
-                            const Expanded(child: ThinLine()),
-                          ],
-                        ),
-                      ),
-                      ButtonList(buttons: buttonConfigs),
-                      Container(
-                        margin: const EdgeInsets.symmetric(vertical: 20),
-                        child: Row(
+        child: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Center(
+            child: Column(
+              children: [
+                IntrinsicHeight(
+                  child: Container(
+                    color: Colors.white,
+                    width: 440,
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 32, horizontal: 40),
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const LinkText(
-                              text: "Lupa password",
-                              url: "https://github.com/",
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Image.asset(
+                                'assets/aruna-logo.png',
+                                height: 37,
+                              ),
                             ),
+                            const SizedBox(height: 20),
+                            const Align(
+                              alignment: Alignment.topLeft,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(vertical: 15),
+                                child: Text(
+                                  'Sign in',
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            const SizedBox(height: 20),
+                            TextFormField(
+                              decoration: const InputDecoration(
+                                labelText: 'Username',
+                                border: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                    width: 2.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            TextFormField(
+                              decoration: const InputDecoration(
+                                labelText: 'Password',
+                                border: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.black,
+                                    width: 2.0,
+                                  ),
+                                ),
+                              ),
+                              obscureText: true,
+                            ),
+                            const SizedBox(height: 20),
                             Container(
-                                margin: const EdgeInsets.all(8),
-                                child: const Text("·")),
-                            const LinkText(
-                              text: "Buat akun demo",
-                              url: "https://github.com/",
+                                margin:
+                                    const EdgeInsets.symmetric(vertical: 10),
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(context, '/dashboard');
+                                  },
+                                  style: TextButton.styleFrom(
+                                    textStyle: const TextStyle(
+                                        fontWeight: FontWeight.w300),
+                                    padding: EdgeInsets.zero,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5),
+                                      side: const BorderSide(
+                                          color: Constants.darkBlueLogin),
+                                    ),
+                                    minimumSize:
+                                        const Size(double.infinity, 50),
+                                    backgroundColor: Constants.darkBlueLogin,
+                                  ),
+                                  child: const Text(
+                                    'Sign in',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                )),
+                            SizedBox(
+                              width: 360,
+                              child: Row(
+                                children: [
+                                  const Expanded(child: ThinLine()),
+                                  Container(
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 24),
+                                      child: const Text(
+                                        "atau",
+                                        style: TextStyle(
+                                          color: Color(0xffb4b4b4),
+                                        ),
+                                      )),
+                                  const Expanded(child: ThinLine()),
+                                ],
+                              ),
+                            ),
+                            ButtonList(buttons: buttonConfigs),
+                            Container(
+                              margin: const EdgeInsets.symmetric(vertical: 20),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const LinkText(
+                                    text: "Lupa password",
+                                    url: "https://github.com/",
+                                  ),
+                                  Container(
+                                      margin: const EdgeInsets.all(8),
+                                      child: const Text("·")),
+                                  const LinkText(
+                                    text: "Buat akun demo",
+                                    url: "https://github.com/",
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
-                      )
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.symmetric(vertical: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const LinkText(
+                        text: "Kebijakan privasi",
+                        url: "https://github.com/",
+                        color: Colors.grey,
+                      ),
+                      Container(
+                          margin: const EdgeInsets.all(8),
+                          child: const Text("·")),
+                      const LinkText(
+                        text: "Ketentuan penggunaan",
+                        url: "https://github.com/",
+                        color: Colors.grey,
+                      ),
+                      Container(
+                          margin: const EdgeInsets.all(8),
+                          child: const Text("·")),
+                      const LinkText(
+                        text: "Tentang Mekari Account",
+                        url: "https://github.com/",
+                        color: Colors.grey,
+                      ),
                     ],
                   ),
                 ),
-              ),
+                const Text(
+                    "Satu akun untuk Jurnal, Klikpajak, Talenta dan Qontak"),
+                const Text("© 2023 PT Mid Solusi Nusantara"),
+              ],
             ),
           ),
         ),

@@ -1,3 +1,4 @@
+import 'package:arukari/helper/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -10,7 +11,7 @@ class LinkText extends StatefulWidget {
     Key? key,
     required this.text,
     this.url = 'https://nextjs.org/',
-    this.color = const Color(0xff1357ff),
+    this.color = Constants.darkBlueLogin,
   }) : super(key: key);
 
   @override
