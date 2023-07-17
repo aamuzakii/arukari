@@ -14,6 +14,7 @@ class ButtonList extends StatelessWidget {
           child: ElevatedButton(
             onPressed: button.onPress,
             style: ElevatedButton.styleFrom(
+                textStyle: const TextStyle(fontWeight: FontWeight.w300),
                 padding: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5),

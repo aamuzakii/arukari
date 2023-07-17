@@ -2,6 +2,7 @@ import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
 import '../widgets/button.dart';
 import '../widgets/link_text.dart';
+import 'package:arukari/helper/constants.dart';
 
 class LoginPage extends StatelessWidget {
   final List<ButtonConfig> buttonConfigs = [
@@ -57,7 +58,7 @@ class LoginPage extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.symmetric(vertical: 15),
                           child: Text(
-                            'Sign In',
+                            'Sign in',
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
@@ -93,21 +94,25 @@ class LoginPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 20),
                       Container(
-                        margin: const EdgeInsets.symmetric(vertical: 10),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/dashboard');
-                          },
-                          style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5),
+                          margin: const EdgeInsets.symmetric(vertical: 10),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/dashboard');
+                            },
+                            style: ElevatedButton.styleFrom(
+                              textStyle:
+                                  const TextStyle(fontWeight: FontWeight.w300),
+                              padding: EdgeInsets.zero,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              minimumSize: const Size(double.infinity, 50),
+                              primary: Constants.darkBlueLogin,
                             ),
-                            minimumSize: const Size(double.infinity, 50),
-                          ),
-                          child: const Text('Sign In'),
-                        ),
-                      ),
+                            child: const Text(
+                              'Sign in',
+                            ),
+                          )),
                       SizedBox(
                         width: 360,
                         child: Row(
@@ -131,13 +136,15 @@ class LoginPage extends StatelessWidget {
                         margin: const EdgeInsets.symmetric(vertical: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            LinkText(
+                          children: [
+                            const LinkText(
                               text: "Lupa password",
                               url: "https://github.com/",
                             ),
-                            Text("."),
-                            LinkText(
+                            Container(
+                                margin: const EdgeInsets.all(8),
+                                child: const Text("·")),
+                            const LinkText(
                               text: "Buat akun demo",
                               url: "https://github.com/",
                             ),
