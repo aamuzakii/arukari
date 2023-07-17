@@ -1,3 +1,4 @@
+import 'package:arukari/helper/constants.dart';
 import 'package:arukari/widgets/big_text.dart';
 import 'package:arukari/widgets/tabbed_widget.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class MiddleSection extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            color: const Color(0xff4b61dd),
+            color: Constants.purpleDashboard,
             child: Row(
               children: [
                 Container(

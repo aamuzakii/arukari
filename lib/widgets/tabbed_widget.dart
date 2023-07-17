@@ -30,8 +30,9 @@ class _MyTabbedWidgetState extends State<MyTabbedWidget>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tabbed Widget'),
+        backgroundColor: Colors.white,
         bottom: TabBar(
+          labelColor: Colors.black,
           controller: _tabController,
           tabs: const [
             Tab(text: 'Announcement'),
