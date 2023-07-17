@@ -95,22 +95,27 @@ class LoginPage extends StatelessWidget {
                       const SizedBox(height: 20),
                       Container(
                           margin: const EdgeInsets.symmetric(vertical: 10),
-                          child: ElevatedButton(
+                          child: TextButton(
                             onPressed: () {
                               Navigator.pushNamed(context, '/dashboard');
                             },
-                            style: ElevatedButton.styleFrom(
+                            style: TextButton.styleFrom(
                               textStyle:
                                   const TextStyle(fontWeight: FontWeight.w300),
                               padding: EdgeInsets.zero,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5),
+                                side: const BorderSide(
+                                    color: Constants.darkBlueLogin),
                               ),
                               minimumSize: const Size(double.infinity, 50),
-                              primary: Constants.darkBlueLogin,
+                              backgroundColor: Constants.darkBlueLogin,
                             ),
                             child: const Text(
                               'Sign in',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                           )),
                       SizedBox(
