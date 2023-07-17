@@ -6,32 +6,30 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      height: 36,
+      margin: const EdgeInsets.symmetric(horizontal: 16.0),
       decoration: BoxDecoration(
-        color: Colors.grey[200],
-        borderRadius: BorderRadius.circular(20.0),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(4.0),
+        border: Border.all(color: const Color(0xffe2e2e2), width: 1.0),
       ),
       child: Row(
-        children: [
-          const SizedBox(width: 10.0),
-          const Icon(Icons.search, color: Colors.grey),
-          const SizedBox(width: 10.0),
-          const Expanded(
+        children: const [
+          SizedBox(width: 10.0),
+          Icon(Icons.search, color: Colors.grey),
+          SizedBox(width: 10.0),
+          Expanded(
             child: TextField(
               decoration: InputDecoration(
+                contentPadding: EdgeInsets.only(bottom: 14),
+                focusColor: Colors.white,
+                fillColor: Colors.white,
                 hintText: 'Search',
                 border: InputBorder.none,
               ),
             ),
           ),
-          IconButton(
-            onPressed: () {
-              // Perform search action
-            },
-            icon: const Icon(Icons.clear),
-            color: Colors.grey,
-          ),
-          const SizedBox(width: 10.0),
+          SizedBox(width: 10.0),
         ],
       ),
     );
