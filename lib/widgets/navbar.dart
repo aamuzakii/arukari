@@ -10,8 +10,8 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
 
   final List<ButtonConfig> buttonConfigs = [
     ButtonConfig(label: 'Dashboard', url: '/dashboard'),
-    ButtonConfig(label: 'My Info', url: '/my-info/index'),
-    ButtonConfig(label: ' Employees', url: '//employee/address-book?id=A'),
+    ButtonConfig(label: 'My Info', url: '/my-info'),
+    ButtonConfig(label: ' Employees', url: '/employee/address-book?id=A'),
     ButtonConfig(label: ' Timesheet', url: '/timesheet/time-tracker'),
     ButtonConfig(label: ' Calendar', url: '/employee/company-calendar'),
     ButtonConfig(label: ' Company', url: '/company/index'),
