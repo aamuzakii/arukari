@@ -1,8 +1,8 @@
 import 'package:arukari/widgets/my_info/sidebar.dart';
 import 'package:flutter/material.dart';
 import '../widgets/button.dart';
-import '../widgets/link_text.dart';
-import 'package:arukari/helper/constants.dart';
+
+import '../widgets/my_info/tabbed_widget.dart';
 
 class MyInfoPage extends StatelessWidget {
   final List<ButtonConfig> buttonConfigs = [
@@ -35,16 +35,18 @@ class MyInfoPage extends StatelessWidget {
         color: Colors.grey[200],
         child: Padding(
           padding: const EdgeInsets.all(24.0),
-          child: Container(
-            width: double.infinity, // Set width to take up all available space
-            height: double.infinity, // Set width to take up all available space
-            child: Row(
-              children: [
-                LeftSidebar(),
-                Container(child: Text("123")),
-              ],
-            ),
-            color: Colors.white,
+          child: Row(
+            children: [
+              LeftSidebar(),
+              Expanded(
+                child: Container(
+                  child: Column(
+                    children: [Text("data")],
+                  ),
+                  color: Colors.white,
+                ),
+              ),
+            ],
           ),
         ),
       ),
