@@ -29,6 +29,7 @@ class _MyTabbedPageState extends State<MyTabbedPage> {
                 child: TabButton(
                   label: tab.label,
                   isSelected: isSelected,
+                  isHovered: index == _currentIndex,
                   onTap: () {
                     setState(() {
                       _currentIndex = index;
@@ -61,10 +62,15 @@ class TabData {
 class TabButton extends StatelessWidget {
   final String label;
   final bool isSelected;
+  final bool isHovered;
   final VoidCallback onTap;
 
-  TabButton(
-      {required this.label, required this.isSelected, required this.onTap});
+  TabButton({
+    required this.label,
+    required this.isSelected,
+    required this.isHovered,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -73,17 +79,17 @@ class TabButton extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
-          color: isSelected ? Colors.blue : Colors.transparent,
           border: Border(
             bottom: BorderSide(
-              color: isSelected ? Colors.red : Colors.blue,
+              color: isSelected || isHovered ? Colors.red : Colors.grey[300]!,
             ),
           ),
         ),
         child: Text(
           label,
           style: TextStyle(
-            color: isSelected ? Colors.white : Colors.blue,
+            fontWeight: isHovered ? FontWeight.bold : FontWeight.normal,
+            color: Colors.black, // Use default color
           ),
         ),
       ),
