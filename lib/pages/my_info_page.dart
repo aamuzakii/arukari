@@ -3,10 +3,9 @@ import 'package:arukari/widgets/link_text.dart';
 import 'package:arukari/widgets/my_info/tabbed_widget.dart';
 import 'package:arukari/widgets/my_info/sidebar.dart';
 import 'package:flutter/material.dart';
-import '../widgets/button.dart';
 
 class MyInfoPage extends StatelessWidget {
-  MyInfoPage({Key? key}) : super(key: key);
+  const MyInfoPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class MyInfoPage extends StatelessWidget {
           padding: const EdgeInsets.all(24.0),
           child: Row(
             children: [
-              LeftSidebar(),
+              const LeftSidebar(),
               Expanded(
                 child: Container(
                   color: Colors.white,
@@ -47,7 +46,8 @@ class MyInfoPage extends StatelessWidget {
                         ],
                       ),
                       // Text("Employees / Abdullah Al Muzaki / General"),
-                      BigText("Personal", 30, fontWeight: FontWeight.w600),
+                      const BigText("Personal", 30,
+                          fontWeight: FontWeight.w600),
                       Expanded(child: MyTabbedPage())
                     ],
                   ),

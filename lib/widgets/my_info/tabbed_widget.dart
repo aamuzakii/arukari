@@ -1,6 +1,10 @@
+import 'package:arukari/helper/constants.dart';
+import 'package:arukari/widgets/my_info/basic_info_table.dart';
 import 'package:flutter/material.dart';
 
 class MyTabbedPage extends StatefulWidget {
+  const MyTabbedPage({Key? key}) : super(key: key);
+
   @override
   _MyTabbedPageState createState() => _MyTabbedPageState();
 }
@@ -9,9 +13,9 @@ class _MyTabbedPageState extends State<MyTabbedPage> {
   int _currentIndex = 0; // Index of the currently selected tab
 
   final List<TabData> tabs = [
-    TabData(label: 'Home', content: 'Home Content'),
-    TabData(label: 'Login', content: 'Login Content'),
-    TabData(label: 'About', content: 'About Content'),
+    TabData(label: 'Basic Info', content: NewWidget()),
+    TabData(label: 'Family', content: NewWidget()),
+    TabData(label: 'Emergency contact', content: NewWidget()),
   ];
 
   @override
@@ -39,11 +43,10 @@ class _MyTabbedPageState extends State<MyTabbedPage> {
               );
             }).toList(),
           ),
+          // tabs[_currentIndex].content,
           Expanded(
             child: Center(
-              child: Text(
-                tabs[_currentIndex].content,
-              ),
+              child: tabs[_currentIndex].content,
             ),
           ),
         ],
@@ -52,9 +55,41 @@ class _MyTabbedPageState extends State<MyTabbedPage> {
   }
 }
 
+class NewWidget extends StatelessWidget {
+  const NewWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Container(
+              child: Text("Personal data"),
+              width: 200.0,
+            ),
+            BasicInfoTable(),
+            Text("Edit"),
+          ],
+        ),
+        Row(
+          children: [
+            Text("Identity & Address"),
+            Text("ID type"),
+            Text("KTP"),
+            Text("Edit"),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
 class TabData {
   final String label;
-  final String content;
+  final Widget content;
 
   TabData({required this.label, required this.content});
 }
@@ -81,7 +116,10 @@ class TabButton extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border(
             bottom: BorderSide(
-              color: isSelected || isHovered ? Colors.red : Colors.grey[300]!,
+              width: 2.5,
+              color: isSelected || isHovered
+                  ? Constants.redMekariHex
+                  : Colors.grey[300]!,
             ),
           ),
         ),
