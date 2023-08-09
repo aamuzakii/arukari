@@ -1,4 +1,4 @@
-import 'package:arukari/widgets/sidebar.dart';
+import 'package:arukari/widgets/my_info/sidebar.dart';
 import 'package:flutter/material.dart';
 import '../widgets/button.dart';
 import '../widgets/link_text.dart';
@@ -37,7 +37,13 @@ class MyInfoPage extends StatelessWidget {
           padding: const EdgeInsets.all(24.0),
           child: Container(
             width: double.infinity, // Set width to take up all available space
-            child: Text("123"),
+            height: double.infinity, // Set width to take up all available space
+            child: Row(
+              children: [
+                LeftSidebar(),
+                Container(child: Text("123")),
+              ],
+            ),
             color: Colors.white,
           ),
         ),
