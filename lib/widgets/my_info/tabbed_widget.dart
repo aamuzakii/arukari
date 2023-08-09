@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:arukari/helper/constants.dart';
 import 'package:arukari/widgets/my_info/basic_info_table.dart';
 import 'package:flutter/material.dart';
@@ -56,9 +58,37 @@ class _MyTabbedPageState extends State<MyTabbedPage> {
 }
 
 class NewWidget extends StatelessWidget {
-  const NewWidget({
+  NewWidget({
     Key? key,
   }) : super(key: key);
+
+  final List<List<String>> personalData = [
+    ['Full name', 'Abdullah Al Muzaki'],
+    ['Mobile phone', '083894588105'],
+    ['Email', 'abdullah.muzaki@aruna.id'],
+    ['Phone', '-'],
+    ['Place of birth', 'Bandung'],
+    ['Birthdate', '28 May 1996'],
+    ['Gender', 'Male'],
+    ['Marital status', 'Married'],
+    ['Blood type', 'O'],
+    ['Religion', 'Islam'],
+  ];
+
+  final List<List<String>> identityAddress = [
+    ['ID type', 'KTP'],
+    ['ID number', '3273162805960004'],
+    ['ID expiration date', 'Permanent'],
+    ['Postal code', '40293'],
+    [
+      'Citizen ID address',
+      'Jl. E. Andjali 1 no 4, Cisaranten Endah, Kec. Arcamanik, Kota Bandung, Jawa Barat'
+    ],
+    [
+      'Residential address',
+      'Jl. Setiabudi No. 262, Pondok Kacang Timur, Pondok Aren, Tangerang Selatan'
+    ],
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -70,26 +100,17 @@ class NewWidget extends StatelessWidget {
               child: Text("Personal data"),
               width: 200.0,
             ),
-            BasicInfoTable(data: [
-              ['Full name', 'Abdullah Al Muzaki'],
-              ['Mobile phone', '083894588105'],
-              ['Email', 'abdullah.muzaki@aruna.id'],
-              ['Phone', '-'],
-              ['Place of birth', 'Bandung'],
-              ['Birthdate', '28 May 1996'],
-              ['Gender', 'Male'],
-              ['Marital status', 'Married'],
-              ['Blood type', 'O'],
-              ['Religion', 'Islam'],
-            ]),
+            BasicInfoTable(data: personalData),
             Text("Edit"),
           ],
         ),
         Row(
           children: [
-            Text("Identity & Address"),
-            Text("ID type"),
-            Text("KTP"),
+            Container(
+              child: Text("Identity & Address"),
+              width: 200.0,
+            ),
+            BasicInfoTable(data: identityAddress),
             Text("Edit"),
           ],
         ),
