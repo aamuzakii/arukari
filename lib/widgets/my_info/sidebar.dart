@@ -9,18 +9,31 @@ class LeftSidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 300,
-      color: Colors.white,
+      // color: Colors.white,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(
+          color: const Color(0xffe2e2e2), // Border color
+          width: 1.5, // Border width
+        ),
+      ),
       child: Column(
         children: [
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                SectionTitle("Abdullah Al Muzaki"),
-                SectionTitle("Fullstack Developer"),
-              ],
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SectionTitle("Abdullah Al Muzaki"),
+                  Image.asset(
+                    'assets/images/blank-person.jpg',
+                    height: 37,
+                  ),
+                  SectionTitle("Fullstack Developer"),
+                ],
+              ),
             ),
           ),
           const ThinLine(),

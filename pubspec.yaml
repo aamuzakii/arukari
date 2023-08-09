@@ -58,6 +58,7 @@ flutter:
     - assets/aruna-logo.png
     - assets/images/banner-marketplace.png
     - assets/images/people-checking.png
+    - assets/images/blank-person.jpg
     - assets/svg/colorful.svg
     - assets/svg/google.svg
 
