@@ -33,7 +33,14 @@ class MyInfoPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         color: Colors.grey[200],
-        child: Text("123"),
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Container(
+            width: double.infinity, // Set width to take up all available space
+            child: Text("123"),
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }
