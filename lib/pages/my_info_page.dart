@@ -3,8 +3,6 @@ import 'package:arukari/widgets/my_info/sidebar.dart';
 import 'package:flutter/material.dart';
 import '../widgets/button.dart';
 
-import '../widgets/my_info/tabbed_widget.dart';
-
 class MyInfoPage extends StatelessWidget {
   MyInfoPage({Key? key}) : super(key: key);
 
@@ -21,7 +19,11 @@ class MyInfoPage extends StatelessWidget {
               Expanded(
                 child: Container(
                   child: Column(
-                    children: [Text("data"), Expanded(child: MyTabbedPage())],
+                    children: [
+                      Text("Employees / Abdullah Al Muzaki / General"),
+                      Text("Personal"),
+                      Expanded(child: MyTabbedPage())
+                    ],
                   ),
                   color: Colors.white,
                 ),
