@@ -22,15 +22,19 @@ class _MyTabbedPageState extends State<MyTabbedPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: tabs.map((tab) {
-              final isSelected = tabs.indexOf(tab) == _currentIndex;
-              return TabButton(
-                label: tab.label,
-                isSelected: isSelected,
-                onTap: () {
-                  setState(() {
-                    _currentIndex = tabs.indexOf(tab);
-                  });
-                },
+              final index = tabs.indexOf(tab);
+              final isSelected = index == _currentIndex;
+              return MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: TabButton(
+                  label: tab.label,
+                  isSelected: isSelected,
+                  onTap: () {
+                    setState(() {
+                      _currentIndex = index;
+                    });
+                  },
+                ),
               );
             }).toList(),
           ),
@@ -70,7 +74,11 @@ class TabButton extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
           color: isSelected ? Colors.blue : Colors.transparent,
-          border: Border.all(color: Colors.blue),
+          border: Border(
+            bottom: BorderSide(
+              color: isSelected ? Colors.red : Colors.blue,
+            ),
+          ),
         ),
         child: Text(
           label,
