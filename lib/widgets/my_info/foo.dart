@@ -8,6 +8,12 @@ class MyTabbedPage extends StatefulWidget {
 class _MyTabbedPageState extends State<MyTabbedPage> {
   int _currentIndex = 0; // Index of the currently selected tab
 
+  final List<TabData> tabs = [
+    TabData(label: 'Home', content: 'Home Content'),
+    TabData(label: 'Login', content: 'Login Content'),
+    TabData(label: 'About', content: 'About Content'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,47 +21,37 @@ class _MyTabbedPageState extends State<MyTabbedPage> {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TabButton(
-                label: 'Home',
-                isSelected: _currentIndex == 0,
+            children: tabs.map((tab) {
+              final isSelected = tabs.indexOf(tab) == _currentIndex;
+              return TabButton(
+                label: tab.label,
+                isSelected: isSelected,
                 onTap: () {
                   setState(() {
-                    _currentIndex = 0;
+                    _currentIndex = tabs.indexOf(tab);
                   });
                 },
-              ),
-              TabButton(
-                label: 'Login',
-                isSelected: _currentIndex == 1,
-                onTap: () {
-                  setState(() {
-                    _currentIndex = 1;
-                  });
-                },
-              ),
-              TabButton(
-                label: 'About',
-                isSelected: _currentIndex == 2,
-                onTap: () {
-                  setState(() {
-                    _currentIndex = 2;
-                  });
-                },
-              ),
-            ],
+              );
+            }).toList(),
           ),
           Expanded(
-            child: _currentIndex == 0
-                ? Center(child: Text('Home Content'))
-                : _currentIndex == 1
-                    ? Center(child: Text('Login Content'))
-                    : Center(child: Text('About Content')),
+            child: Center(
+              child: Text(
+                tabs[_currentIndex].content,
+              ),
+            ),
           ),
         ],
       ),
     );
   }
+}
+
+class TabData {
+  final String label;
+  final String content;
+
+  TabData({required this.label, required this.content});
 }
 
 class TabButton extends StatelessWidget {
