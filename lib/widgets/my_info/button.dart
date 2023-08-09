@@ -1,3 +1,4 @@
+import 'package:arukari/helper/constants.dart';
 import 'package:flutter/material.dart';
 
 class HoverBorderButton extends StatefulWidget {
@@ -22,13 +23,16 @@ class _HoverBorderButtonState extends State<HoverBorderButton> {
       child: GestureDetector(
         onTap: widget.onPressed,
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
           decoration: BoxDecoration(
-            border: Border.all(color: _isHovered ? Colors.blue : Colors.black),
+            borderRadius: BorderRadius.circular(4), // Add border radius
+            border: Border.all(
+                color:
+                    _isHovered ? Constants.darkBlueLogin : Constants.greySeven),
           ),
           child: Text(
             widget.text,
-            style: TextStyle(color: Color(0xff777777)),
+            style: TextStyle(color: Constants.greySeven),
           ),
         ),
       ),
