@@ -10,16 +10,14 @@ class BasicInfoTable extends StatelessWidget {
         children: <TableRow>[
           TableRow(
             children: <Widget>[
-              CustomTableCell(text: 'Cell 1'),
-              CustomTableCell(text: 'Cell 2'),
-              CustomTableCell(text: 'Cell 3'),
+              CustomTableCell(text: 'Full name'),
+              CustomTableCell(text: 'Abdullah Al Muzaki'),
             ],
           ),
           TableRow(
             children: <Widget>[
-              CustomTableCell(text: 'Cell 4'),
-              CustomTableCell(text: 'Cell 5'),
-              CustomTableCell(text: 'Cell 6'),
+              CustomTableCell(text: 'email'),
+              CustomTableCell(text: 'abdullah.muzaki@aruna.id'),
             ],
           ),
         ],
