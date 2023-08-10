@@ -1,6 +1,6 @@
 import 'package:arukari/helper/constants.dart';
 import 'package:arukari/widgets/big_text.dart';
-import 'package:arukari/widgets/navbar.dart';
+import 'package:arukari/widgets/common/navbar.dart';
 import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
 

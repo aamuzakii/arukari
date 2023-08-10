@@ -1,6 +1,6 @@
 import 'package:arukari/widgets/lucy.dart';
 import 'package:arukari/widgets/middle_section.dart';
-import 'package:arukari/widgets/navbar.dart';
+import 'package:arukari/widgets/common/navbar.dart';
 import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
 import '../widgets/right_sidebar.dart';
