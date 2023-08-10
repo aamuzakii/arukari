@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:arukari/helper/constants.dart';
+import 'package:arukari/widgets/big_text.dart';
 import 'package:arukari/widgets/my_info/basic_info_table.dart';
 import 'package:arukari/widgets/my_info/button.dart';
 import 'package:arukari/widgets/my_info/sidebar.dart';
@@ -104,12 +105,19 @@ class NewWidget extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                child: Text("Personal data"),
-                width: 200.0,
+              SizedBox(
+                width: 400.0,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    BigText("Personal data", 16, fontWeight: FontWeight.w600),
+                    Text(
+                        "Your email address is your identity on Talenta is used to log in"),
+                  ],
+                ),
               ),
               BasicInfoTable(data: personalData),
-              EditButton(),
+              const EditButton(),
             ],
           ),
         ),
@@ -119,9 +127,9 @@ class NewWidget extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              SizedBox(
                 child: Text("Identity & Address"),
-                width: 200.0,
+                width: 400.0,
               ),
               BasicInfoTable(data: identityAddress),
               EditButton()
