@@ -103,10 +103,7 @@ class NewWidget extends StatelessWidget {
               width: 200.0,
             ),
             BasicInfoTable(data: personalData),
-            HoverBorderButton(
-              onPressed: () {},
-              text: 'Edit',
-            ),
+            EditButton(),
           ],
         ),
         Row(
@@ -117,13 +114,24 @@ class NewWidget extends StatelessWidget {
               width: 200.0,
             ),
             BasicInfoTable(data: identityAddress),
-            HoverBorderButton(
-              onPressed: () {},
-              text: '',
-            ),
+            EditButton()
           ],
         ),
       ],
+    );
+  }
+}
+
+class EditButton extends StatelessWidget {
+  const EditButton({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return HoverBorderButton(
+      onPressed: () {},
+      text: 'Edit',
     );
   }
 }
