@@ -25,35 +25,38 @@ class _MyTabbedPageState extends State<MyTabbedPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: tabs.map((tab) {
-              final index = tabs.indexOf(tab);
-              final isSelected = index == _currentIndex;
-              return MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: TabButton(
-                  label: tab.label,
-                  isSelected: isSelected,
-                  isHovered: index == _currentIndex,
-                  onTap: () {
-                    setState(() {
-                      _currentIndex = index;
-                    });
-                  },
-                ),
-              );
-            }).toList(),
-          ),
-          // tabs[_currentIndex].content,
-          Expanded(
-            child: Center(
-              child: tabs[_currentIndex].content,
+      body: Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: tabs.map((tab) {
+                final index = tabs.indexOf(tab);
+                final isSelected = index == _currentIndex;
+                return MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: TabButton(
+                    label: tab.label,
+                    isSelected: isSelected,
+                    isHovered: index == _currentIndex,
+                    onTap: () {
+                      setState(() {
+                        _currentIndex = index;
+                      });
+                    },
+                  ),
+                );
+              }).toList(),
             ),
-          ),
-        ],
+            // tabs[_currentIndex].content,
+            Expanded(
+              child: Center(
+                child: tabs[_currentIndex].content,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -97,7 +100,7 @@ class NewWidget extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 0),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

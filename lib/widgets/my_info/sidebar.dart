@@ -1,3 +1,4 @@
+import 'package:arukari/helper/constants.dart';
 import 'package:arukari/widgets/big_text.dart';
 import 'package:arukari/widgets/icon_with_link.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +14,8 @@ class LeftSidebar extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
-          color: const Color(0xffe2e2e2), // Border color
-          width: 1.5, // Border width
+          color: Constants.twoE,
+          width: 1.0,
         ),
       ),
       child: Column(
