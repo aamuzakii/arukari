@@ -25,14 +25,18 @@ class MyInfoPage extends StatelessWidget {
                     Expanded(
                       child: Container(
                         color: Colors.white,
-                        child: Column(
-                          children: const [
-                            Breadcrumb(),
-                            // Text("Employees / Abdullah Al Muzaki / General"),
-                            BigText("Personal", 30,
-                                fontWeight: FontWeight.w600),
-                            Expanded(child: MyTabbedPage())
-                          ],
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 14, horizontal: 24),
+                          child: Column(
+                            children: const [
+                              Breadcrumb(),
+                              // Text("Employees / Abdullah Al Muzaki / General"),
+                              BigText("Personal", 30,
+                                  fontWeight: FontWeight.w600),
+                              Expanded(child: MyTabbedPage())
+                            ],
+                          ),
                         ),
                       ),
                     ),

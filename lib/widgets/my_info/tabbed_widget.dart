@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:arukari/helper/constants.dart';
 import 'package:arukari/widgets/my_info/basic_info_table.dart';
 import 'package:arukari/widgets/my_info/button.dart';
+import 'package:arukari/widgets/my_info/sidebar.dart';
 import 'package:flutter/material.dart';
 
 class MyTabbedPage extends StatefulWidget {
@@ -95,27 +96,34 @@ class NewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              child: Text("Personal data"),
-              width: 200.0,
-            ),
-            BasicInfoTable(data: personalData),
-            EditButton(),
-          ],
+        Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                child: Text("Personal data"),
+                width: 200.0,
+              ),
+              BasicInfoTable(data: personalData),
+              EditButton(),
+            ],
+          ),
         ),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              child: Text("Identity & Address"),
-              width: 200.0,
-            ),
-            BasicInfoTable(data: identityAddress),
-            EditButton()
-          ],
+        ThinLine(),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                child: Text("Identity & Address"),
+                width: 200.0,
+              ),
+              BasicInfoTable(data: identityAddress),
+              EditButton()
+            ],
+          ),
         ),
       ],
     );
