@@ -26,32 +26,10 @@ class MyInfoPage extends StatelessWidget {
                       child: Container(
                         color: Colors.white,
                         child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const LinkText(
-                                  text: "Employees",
-                                  url: "https://github.com/",
-                                ),
-                                Container(
-                                    margin: const EdgeInsets.all(8),
-                                    child: const Text("/")),
-                                const LinkText(
-                                  text: "Abdullah Al Muzaki",
-                                  url: "https://github.com/",
-                                ),
-                                Container(
-                                    margin: const EdgeInsets.all(8),
-                                    child: const Text("/")),
-                                const LinkText(
-                                  text: "General",
-                                  url: "https://github.com/",
-                                ),
-                              ],
-                            ),
+                          children: const [
+                            Breadcrumb(),
                             // Text("Employees / Abdullah Al Muzaki / General"),
-                            const BigText("Personal", 30,
+                            BigText("Personal", 30,
                                 fontWeight: FontWeight.w600),
                             Expanded(child: MyTabbedPage())
                           ],
@@ -65,6 +43,35 @@ class MyInfoPage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class Breadcrumb extends StatelessWidget {
+  const Breadcrumb({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const LinkText(
+          text: "Employees",
+          url: "https://github.com/",
+        ),
+        Container(margin: const EdgeInsets.all(8), child: const Text("/")),
+        const LinkText(
+          text: "Abdullah Al Muzaki",
+          url: "https://github.com/",
+        ),
+        Container(margin: const EdgeInsets.all(8), child: const Text("/")),
+        const LinkText(
+          text: "General",
+          url: "https://github.com/",
+        ),
+      ],
     );
   }
 }
