@@ -1,51 +1,5 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  bool isDropdownOpen = false;
-
-  void toggleDropdown() {
-    setState(() {
-      isDropdownOpen = !isDropdownOpen;
-    });
-  }
-
-  void closeDropdown() {
-    setState(() {
-      isDropdownOpen = false;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Dropdown Menu Example'),
-      ),
-      body: GestureDetector(
-        onTap: () {
-          closeDropdown();
-        },
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.all(16.0),
-                child: Sepaket(),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
 class Sepaket extends StatelessWidget {
   const Sepaket({
     Key? key,
