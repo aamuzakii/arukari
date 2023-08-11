@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:arukari/pages/dashboard_page.dart';
+import 'package:arukari/pages/employee.dart';
 import 'package:arukari/pages/live_attendance_page.dart';
 import 'package:arukari/pages/login_page.dart';
 import 'package:arukari/pages/my_info_page.dart';
@@ -27,7 +30,8 @@ class MyApp extends StatelessWidget {
         '/about': (context) => const AboutPage(),
         '/dashboard': (context) => const DashboardPage(),
         '/live-attendance': (context) => const LiveAttendancePage(),
-        '/my-info': (context) =>  MyInfoPage(),
+        '/my-info': (context) => MyInfoPage(),
+        '/employee': (context) => EmployeeTable(),
         '/foo': (context) => const CustomScrollViewWidget(),
       },
     );

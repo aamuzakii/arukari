@@ -149,7 +149,7 @@ class ClockInOutButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.pop(context);
+        // Navigator.pop(context);
       },
       child: const Text('Clock In'),
       style: ElevatedButton.styleFrom(

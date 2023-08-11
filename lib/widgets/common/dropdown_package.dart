@@ -25,7 +25,7 @@ class Sepaket extends StatelessWidget {
               // do something else
               break;
             case 'sign_out':
-              // do something else
+              Navigator.pop(context);
               break;
             default:
             // something if anything not match
@@ -34,7 +34,7 @@ class Sepaket extends StatelessWidget {
         items: [
           DropdownMenuItem<String>(
             value: 'account_settings',
-            child: Text('Account Settings'),
+            child: Text('Settings'),
           ),
           DropdownMenuItem<String>(
             value: 'help',

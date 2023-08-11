@@ -12,7 +12,7 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
   final List<ButtonConfig> buttonConfigs = [
     ButtonConfig(label: 'Dashboard', url: '/dashboard'),
     ButtonConfig(label: 'My Info', url: '/my-info'),
-    ButtonConfig(label: ' Employees', url: '/employee/address-book?id=A'),
+    ButtonConfig(label: ' Employees', url: '/employee'),
     ButtonConfig(label: ' Timesheet', url: '/timesheet/time-tracker'),
     ButtonConfig(label: ' Calendar', url: '/employee/company-calendar'),
     ButtonConfig(label: ' Company', url: '/company/index'),
@@ -34,13 +34,6 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
         ),
         ButtonList(buttons: buttonConfigs),
         const Expanded(child: SizedBox(width: 16)),
-        IconButton(
-            icon: const Icon(Icons.email),
-            onPressed: () {
-              // Handle the action for icon1
-            },
-            color: Colors.grey),
-        const Colorful(),
         Sepaket(),
         Container(
           width: 25, // Adjust the width and height as needed
@@ -60,6 +53,14 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
         ),
+        IconButton(
+            padding: const EdgeInsets.only(left: 20.0),
+            icon: const Icon(Icons.email),
+            onPressed: () {
+              // Handle the action for icon1
+            },
+            color: Colors.grey),
+        const Colorful(),
         Container(
           width: 40,
         )

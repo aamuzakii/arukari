@@ -13,7 +13,7 @@ class LucyWidget extends StatelessWidget {
       ButtonConfig(
         label: 'Live attendance',
         onPress: () {
-          Navigator.pushNamed(context, '/live-attendance');
+          Navigator.pushReplacementNamed(context, '/live-attendance');
         },
       ),
       ButtonConfig(
