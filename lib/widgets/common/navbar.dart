@@ -60,16 +60,6 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
         ),
-        IconButton(
-            icon: const Icon(
-              Icons.keyboard_arrow_down, // The chevron pointing downwards icon
-              size: 15, // Adjust the size as needed
-              color: Colors.grey, // Grey color
-            ),
-            onPressed: () {
-              // Handle the action for icon1
-            },
-            color: Colors.grey),
         Container(
           width: 40,
         )

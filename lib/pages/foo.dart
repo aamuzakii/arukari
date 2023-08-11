@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 
 class Sepaket extends StatelessWidget {
@@ -9,7 +11,11 @@ class Sepaket extends StatelessWidget {
   Widget build(BuildContext context) {
     return DropdownButtonHideUnderline(
       child: DropdownButton<String>(
-        icon: Icon(Icons.menu),
+        icon: Icon(
+          Icons.keyboard_arrow_down, // The chevron pointing downwards icon
+          size: 15, // Adjust the size as needed
+          color: Colors.grey, // Grey color
+        ),
         onChanged: (value) {
           if (value == 'login') {
             // Handle login option
