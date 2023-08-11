@@ -33,54 +33,26 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
         ),
         ButtonList(buttons: buttonConfigs),
         const Expanded(child: SizedBox(width: 16)),
-        MouseRegion(
-          cursor: SystemMouseCursors.click,
-          child: InkWell(
-            onTap: () {
-              // Handle button tap
-            },
-            onHover: (value) {
-              // Handle hover state changes
-            },
-            child: Container(
-              width: 24,
-              decoration: BoxDecoration(
-                // color: Colors.grey.shade200,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: SvgPicture.asset(
-                'assets/svg/colorful.svg',
-                width: 200,
-                height: 200,
-              ),
-            ),
-          ),
-        ),
         IconButton(
             icon: const Icon(Icons.email),
             onPressed: () {
               // Handle the action for icon1
             },
             color: Colors.grey),
-        IconButton(
-            icon: const Icon(Icons.email),
-            onPressed: () {
-              // Handle the action for icon1
-            },
-            color: Colors.grey),
+        const Colorful(),
         Container(
-          width: 100, // Adjust the width and height as needed
-          height: 100,
-          decoration: BoxDecoration(
+          width: 25, // Adjust the width and height as needed
+          height: 25,
+          decoration: const BoxDecoration(
             color: Colors.grey, // Grey color for the circle
             shape: BoxShape.circle, // Circular shape
           ),
-          child: Center(
+          child: const Center(
             child: Text(
               'AM',
               style: TextStyle(
                 color: Colors.white, // White color for the text
-                fontSize: 20, // Adjust the font size as needed
+                fontSize: 10, // Adjust the font size as needed
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -106,4 +78,40 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
+
+class Colorful extends StatelessWidget {
+  const Colorful({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: InkWell(
+          onTap: () {
+            // Handle button tap
+          },
+          onHover: (value) {
+            // Handle hover state changes
+          },
+          child: Container(
+            width: 24,
+            decoration: BoxDecoration(
+              // color: Colors.grey.shade200,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: SvgPicture.asset(
+              'assets/svg/colorful.svg',
+              width: 200,
+              height: 200,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
