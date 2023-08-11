@@ -3,7 +3,6 @@ import 'package:arukari/widgets/middle_section.dart';
 import 'package:arukari/widgets/common/navbar.dart';
 import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
-import '../widgets/right_sidebar.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -52,9 +51,7 @@ class RightSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: const [
-        RightSidebar(),
         SizedBox(height: 30),
-        RightSidebar(),
       ],
     );
   }
