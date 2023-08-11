@@ -1,0 +1,41 @@
+[
+  {
+    "id": 108102,
+    "name": "Syahrudin Dummy",
+    "device_id": "FSDAA00002",
+    "ship_name": null,
+    "res_company": {
+      "name": "Jenebora"
+    },
+    "aruna_fishing_gear": null,
+    "aruna_ship_class": null,
+    "mobile": null,
+    "phone": null
+  },
+  {
+    "id": 108111,
+    "name": "Syahrudin Dummy",
+    "device_id": "TESTDEV001",
+    "ship_name": null,
+    "res_company": {
+      "name": "Jenebora"
+    },
+    "aruna_fishing_gear": null,
+    "aruna_ship_class": null,
+    "mobile": null,
+    "phone": null
+  },
+  {
+    "id": 108116,
+    "name": "Syahrudin Dummy",
+    "device_id": "TESTDEV006",
+    "ship_name": null,
+    "res_company": {
+      "name": "Jenebora"
+    },
+    "aruna_fishing_gear": null,
+    "aruna_ship_class": null,
+    "mobile": null,
+    "phone": null
+  }
+]

@@ -128,7 +128,8 @@ class NewWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                child: Text("Identity & Address"),
+                child: BigText("Identity & Address", 16,
+                    fontWeight: FontWeight.w600),
                 width: 400.0,
               ),
               BasicInfoTable(data: identityAddress),

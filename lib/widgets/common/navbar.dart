@@ -68,12 +68,37 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
               // Handle the action for icon1
             },
             color: Colors.grey),
+        Container(
+          width: 100, // Adjust the width and height as needed
+          height: 100,
+          decoration: BoxDecoration(
+            color: Colors.grey, // Grey color for the circle
+            shape: BoxShape.circle, // Circular shape
+          ),
+          child: Center(
+            child: Text(
+              'AM',
+              style: TextStyle(
+                color: Colors.white, // White color for the text
+                fontSize: 20, // Adjust the font size as needed
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
         IconButton(
-            icon: const Icon(Icons.email),
+            icon: const Icon(
+              Icons.keyboard_arrow_down, // The chevron pointing downwards icon
+              size: 15, // Adjust the size as needed
+              color: Colors.grey, // Grey color
+            ),
             onPressed: () {
               // Handle the action for icon1
             },
             color: Colors.grey),
+        Container(
+          width: 40,
+        )
       ],
     );
   }
