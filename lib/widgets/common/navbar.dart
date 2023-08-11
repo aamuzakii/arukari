@@ -1,3 +1,4 @@
+import 'package:arukari/pages/foo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -40,6 +41,7 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
             },
             color: Colors.grey),
         const Colorful(),
+        Sepaket(),
         Container(
           width: 25, // Adjust the width and height as needed
           height: 25,
