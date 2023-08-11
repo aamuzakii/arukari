@@ -17,20 +17,32 @@ class Sepaket extends StatelessWidget {
           color: Colors.grey, // Grey color
         ),
         onChanged: (value) {
-          if (value == 'login') {
-            // Handle login option
-          } else if (value == 'about') {
-            // Handle about option
+          switch (value) {
+            case 'account_settings':
+              // do something
+              break;
+            case 'help':
+              // do something else
+              break;
+            case 'sign_out':
+              // do something else
+              break;
+            default:
+            // something if anything not match
           }
         },
         items: [
           DropdownMenuItem<String>(
-            value: 'login',
-            child: Text('Login'),
+            value: 'account_settings',
+            child: Text('Account Settings'),
           ),
           DropdownMenuItem<String>(
-            value: 'about',
-            child: Text('About'),
+            value: 'help',
+            child: Text('Help'),
+          ),
+          DropdownMenuItem<String>(
+            value: 'sign_out',
+            child: Text('Sign Out'),
           ),
         ],
       ),
