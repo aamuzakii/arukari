@@ -1,4 +1,4 @@
-import 'package:arukari/pages/foo.dart';
+import 'package:arukari/widgets/common/dropdown_package.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
