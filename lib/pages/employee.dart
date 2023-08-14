@@ -1,3 +1,7 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
+import 'package:arukari/helper/constants.dart';
+import 'package:arukari/widgets/big_text.dart';
 import 'package:arukari/widgets/lucy.dart';
 import 'package:arukari/widgets/middle_section.dart';
 import 'package:arukari/widgets/common/navbar.dart';
@@ -16,57 +20,6 @@ class EmployeeTable extends StatelessWidget {
         color: Colors.grey[200], // Adjust the shade of grey as needed
         child: Foo(),
       ),
-    );
-  }
-}
-
-class NewWidget extends StatelessWidget {
-  const NewWidget({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(height: 30),
-          LucyWidget(),
-          const SizedBox(height: 30),
-          FractionallySizedBox(
-            widthFactor: 0.67,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                LeftSidebar(),
-                SizedBox(width: 30),
-                MiddleSection(),
-                SizedBox(width: 30),
-                RightSection(),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class RightSection extends StatelessWidget {
-  const RightSection({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: const [
-        RightSidebar(),
-        SizedBox(height: 30),
-        RightSidebar(),
-      ],
     );
   }
 }
@@ -97,23 +50,49 @@ class Foo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DataTable(
-      columns: [
-        DataColumn(label: Text('Employee Name')),
-        DataColumn(label: Text('Employee ID')),
-        DataColumn(label: Text('Organization')),
-        DataColumn(label: Text('Job Position')),
-        DataColumn(label: Text('Email')),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: double.maxFinite,
+          color: Constants.f1f5f9,
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: BigText("Employees", 24, fontWeight: FontWeight.w600),
+          ),
+        ),
+        Container(
+          color: Colors.white,
+          width: double.maxFinite,
+          child: Column(
+            children: [
+              Container(child: Text("Directory")),
+              DataTable(
+                dataRowColor: MaterialStateColor.resolveWith(
+                    (states) => Colors.white), // White background for data rows
+                headingRowColor: MaterialStateColor.resolveWith((states) =>
+                    Constants.f1f5f9), // Red background for header row
+                columns: [
+                  DataColumn(label: Text('Employee Name')),
+                  DataColumn(label: Text('Employee ID')),
+                  DataColumn(label: Text('Organization')),
+                  DataColumn(label: Text('Job Position')),
+                  DataColumn(label: Text('Email')),
+                ],
+                rows: employees.map((employee) {
+                  return DataRow(cells: [
+                    DataCell(Text(employee.name)),
+                    DataCell(Text(employee.id)),
+                    DataCell(Text(employee.organization)),
+                    DataCell(Text(employee.position)),
+                    DataCell(Text(employee.email)),
+                  ]);
+                }).toList(),
+              ),
+            ],
+          ),
+        ),
       ],
-      rows: employees.map((employee) {
-        return DataRow(cells: [
-          DataCell(Text(employee.name)),
-          DataCell(Text(employee.id)),
-          DataCell(Text(employee.organization)),
-          DataCell(Text(employee.position)),
-          DataCell(Text(employee.email)),
-        ]);
-      }).toList(),
     );
   }
 }
