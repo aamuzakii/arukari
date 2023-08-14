@@ -60,7 +60,7 @@ class Foo extends StatelessWidget {
           width: double.maxFinite,
           color: Constants.f1f5f9,
           child: Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
             child: BigText("Employees", 24, fontWeight: FontWeight.w600),
           ),
         ),
@@ -70,42 +70,46 @@ class Foo extends StatelessWidget {
           child: Container(
             child: Column(
               children: [
-                Row(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(4.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.5),
-                        border: Border.all(
-                          color: Constants.greySeven,
-                          width: 1.0,
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(4.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.5),
+                          border: Border.all(
+                            color: Constants.greySeven,
+                            width: 1.0,
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            IconWithLinkPurple(
+                                label: 'Directory',
+                                icon: 'assets/svg/column.svg'),
+                            IconWithLinkPurple(
+                                label: 'Org chart', icon: 'assets/svg/org.svg'),
+                          ],
                         ),
                       ),
-                      child: Row(
-                        children: [
-                          IconWithLinkPurple(
-                              label: 'Directory',
-                              icon: 'assets/svg/column.svg'),
-                          IconWithLinkPurple(
-                              label: 'Org chart', icon: 'assets/svg/org.svg'),
-                        ],
+                      Expanded(
+                        child: Container(),
                       ),
-                    ),
-                    Expanded(
-                      child: Container(),
-                    ),
-                    SvgPicture.asset(
-                      'assets/svg/column.svg',
-                      width: 20,
-                      height: 20,
-                    ),
-                    SvgPicture.asset(
-                      'assets/svg/insight.svg',
-                      width: 20,
-                      height: 20,
-                    ),
-                    Expanded(child: SearchBar())
-                  ],
+                      SvgPicture.asset(
+                        'assets/svg/column.svg',
+                        width: 20,
+                        height: 20,
+                      ),
+                      SvgPicture.asset(
+                        'assets/svg/insight.svg',
+                        width: 20,
+                        height: 20,
+                      ),
+                      Expanded(child: SearchBar())
+                    ],
+                  ),
                 ),
                 DataTable(
                   dataRowColor:
