@@ -12,6 +12,7 @@ class RightSidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 270, // ini PENYAKIT, KELEBARAN,
+      margin: const EdgeInsets.only(bottom: 10.0),
       color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
