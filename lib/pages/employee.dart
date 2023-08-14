@@ -7,6 +7,7 @@ import 'package:arukari/widgets/middle_section.dart';
 import 'package:arukari/widgets/common/navbar.dart';
 import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../widgets/right_sidebar.dart';
 
 class EmployeeTable extends StatelessWidget {
@@ -64,32 +65,64 @@ class Foo extends StatelessWidget {
         Container(
           color: Colors.white,
           width: double.maxFinite,
-          child: Column(
-            children: [
-              Container(child: Text("Directory")),
-              DataTable(
-                dataRowColor: MaterialStateColor.resolveWith(
-                    (states) => Colors.white), // White background for data rows
-                headingRowColor: MaterialStateColor.resolveWith((states) =>
-                    Constants.f1f5f9), // Red background for header row
-                columns: [
-                  DataColumn(label: Text('Employee Name')),
-                  DataColumn(label: Text('Employee ID')),
-                  DataColumn(label: Text('Organization')),
-                  DataColumn(label: Text('Job Position')),
-                  DataColumn(label: Text('Email')),
-                ],
-                rows: employees.map((employee) {
-                  return DataRow(cells: [
-                    DataCell(Text(employee.name)),
-                    DataCell(Text(employee.id)),
-                    DataCell(Text(employee.organization)),
-                    DataCell(Text(employee.position)),
-                    DataCell(Text(employee.email)),
-                  ]);
-                }).toList(),
-              ),
-            ],
+          child: Container(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: const Color(0xff123123),
+                          width: 1.0,
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Container(child: Text("Directory")),
+                          Container(child: Text("Org chart")),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(),
+                    ),
+                    SvgPicture.asset(
+                      'assets/svg/column.svg',
+                      width: 20,
+                      height: 20,
+                    ),
+                    SvgPicture.asset(
+                      'assets/svg/insight.svg',
+                      width: 20,
+                      height: 20,
+                    ),
+                  ],
+                ),
+                DataTable(
+                  dataRowColor:
+                      MaterialStateColor.resolveWith((states) => Colors.white),
+                  headingRowColor: MaterialStateColor.resolveWith(
+                      (states) => Constants.f1f5f9),
+                  columns: [
+                    DataColumn(label: Text('Employee Name')),
+                    DataColumn(label: Text('Employee ID')),
+                    DataColumn(label: Text('Organization')),
+                    DataColumn(label: Text('Job Position')),
+                    DataColumn(label: Text('Email')),
+                  ],
+                  rows: employees.map((employee) {
+                    return DataRow(cells: [
+                      DataCell(Text(employee.name)),
+                      DataCell(Text(employee.id)),
+                      DataCell(Text(employee.organization)),
+                      DataCell(Text(employee.position)),
+                      DataCell(Text(employee.email)),
+                    ]);
+                  }).toList(),
+                ),
+              ],
+            ),
           ),
         ),
       ],
