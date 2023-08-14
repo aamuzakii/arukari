@@ -133,10 +133,59 @@ class Foo extends StatelessWidget {
                     ]);
                   }).toList(),
                 ),
+                FooterPaginationControl()
               ],
             ),
           ),
         ),
+      ],
+    );
+  }
+}
+
+class ChevronButton extends StatelessWidget {
+  final VoidCallback onPressed;
+
+  const ChevronButton({
+    Key? key,
+    required this.onPressed,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: onPressed,
+      style: TextButton.styleFrom(
+        backgroundColor: Colors.grey[200], // Light grey background
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(6.0), // Rounded corners
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 0), // Adjust the button width
+        minimumSize: Size(0, 20), // Set minimum height for the button
+      ),
+      child: Icon(
+        Icons.chevron_right,
+        color: Colors.grey, // Dark grey chevron color
+      ),
+    );
+  }
+}
+
+class FooterPaginationControl extends StatelessWidget {
+  const FooterPaginationControl({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text("data"),
+        Expanded(child: Text("")),
+        Text("data"),
+        ChevronButton(
+          onPressed: () {},
+        )
       ],
     );
   }
