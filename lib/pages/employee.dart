@@ -97,15 +97,21 @@ class Foo extends StatelessWidget {
                       Expanded(
                         child: Container(),
                       ),
-                      SvgPicture.asset(
-                        'assets/svg/column.svg',
-                        width: 20,
-                        height: 20,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: SvgPicture.asset(
+                          'assets/svg/column.svg',
+                          width: 20,
+                          height: 20,
+                        ),
                       ),
-                      SvgPicture.asset(
-                        'assets/svg/insight.svg',
-                        width: 20,
-                        height: 20,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: SvgPicture.asset(
+                          'assets/svg/insight.svg',
+                          width: 20,
+                          height: 20,
+                        ),
                       ),
                       Expanded(child: SearchBar())
                     ],
@@ -187,7 +193,6 @@ class FooterPaginationControl extends StatelessWidget {
       children: [
         Text("data"),
         Expanded(child: Text("")),
-        Text("data"),
         Row(
           children: [
             ChevronButton(
@@ -198,6 +203,7 @@ class FooterPaginationControl extends StatelessWidget {
               onPressed: () {},
               icon: Icons.chevron_left,
             ),
+            Text("from 48"),
             ChevronButton(
               onPressed: () {},
               icon: Icons.chevron_right,
