@@ -71,6 +71,7 @@ class Foo extends StatelessWidget {
                 Row(
                   children: [
                     Container(
+                      padding: EdgeInsets.all(4.0),
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: const Color(0xff123123),
@@ -79,7 +80,7 @@ class Foo extends StatelessWidget {
                       ),
                       child: Row(
                         children: [
-                          Container(child: Text("Directory")),
+                          PurplePackage(),
                           Container(child: Text("Org chart")),
                         ],
                       ),
@@ -126,6 +127,29 @@ class Foo extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class PurplePackage extends StatelessWidget {
+  const PurplePackage({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(4.0),
+      child: Row(
+        children: [
+          SvgPicture.asset(
+            'assets/svg/directory.svg',
+            width: 20,
+            height: 20,
+          ),
+          Container(child: Text("Directory")),
+        ],
+      ),
     );
   }
 }

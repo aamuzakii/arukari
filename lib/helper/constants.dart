@@ -11,4 +11,5 @@ class Constants {
   static const Color twoE = Color(0xff212121);
   static const Color f1f5f9 = Color(0xfff1f5f9);
   static const Color fbfbfb = Color(0xfffbfbfb);
+  static const Color ebe9fc = Color(0xffebe9fc);
 }
