@@ -145,27 +145,32 @@ class Foo extends StatelessWidget {
 
 class ChevronButton extends StatelessWidget {
   final VoidCallback onPressed;
+  final IconData icon;
 
   const ChevronButton({
     Key? key,
     required this.onPressed,
+    required this.icon,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      style: TextButton.styleFrom(
-        backgroundColor: Colors.grey[200], // Light grey background
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(6.0), // Rounded corners
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 3),
+      child: TextButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
+          backgroundColor: Colors.grey[200],
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(6.0),
+          ),
+          padding: EdgeInsets.symmetric(horizontal: 0),
+          minimumSize: Size(0, 20), // Set minimum height for the button
         ),
-        padding: EdgeInsets.symmetric(horizontal: 0), // Adjust the button width
-        minimumSize: Size(0, 20), // Set minimum height for the button
-      ),
-      child: Icon(
-        Icons.chevron_right,
-        color: Colors.grey, // Dark grey chevron color
+        child: Icon(
+          icon,
+          color: Colors.grey, // Dark grey chevron color
+        ),
       ),
     );
   }
@@ -183,8 +188,25 @@ class FooterPaginationControl extends StatelessWidget {
         Text("data"),
         Expanded(child: Text("")),
         Text("data"),
-        ChevronButton(
-          onPressed: () {},
+        Row(
+          children: [
+            ChevronButton(
+              onPressed: () {},
+              icon: Icons.first_page,
+            ),
+            ChevronButton(
+              onPressed: () {},
+              icon: Icons.chevron_left,
+            ),
+            ChevronButton(
+              onPressed: () {},
+              icon: Icons.chevron_right,
+            ),
+            ChevronButton(
+              onPressed: () {},
+              icon: Icons.last_page,
+            ),
+          ],
         )
       ],
     );
