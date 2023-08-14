@@ -2,6 +2,7 @@
 
 import 'package:arukari/helper/constants.dart';
 import 'package:arukari/widgets/big_text.dart';
+import 'package:arukari/widgets/icon_with_link.dart';
 import 'package:arukari/widgets/lucy.dart';
 import 'package:arukari/widgets/middle_section.dart';
 import 'package:arukari/widgets/common/navbar.dart';
@@ -80,7 +81,9 @@ class Foo extends StatelessWidget {
                       ),
                       child: Row(
                         children: [
-                          PurplePackage(),
+                          IconWithLinkPurple(
+                              label: 'Directory',
+                              icon: 'assets/svg/column.svg'),
                           Container(child: Text("Org chart")),
                         ],
                       ),
@@ -131,9 +134,17 @@ class Foo extends StatelessWidget {
   }
 }
 
-class PurplePackage extends StatelessWidget {
-  const PurplePackage({
+class IconWithLinkPurple extends StatelessWidget {
+  // logic disini sama persis dengan IconWithLink, cuma build view nya aja yg beda. Idealnya bisa pake extends atau implement
+  final String label;
+  final String url;
+  final dynamic icon;
+
+  const IconWithLinkPurple({
     Key? key,
+    required this.label,
+    required this.icon,
+    this.url = 'https://nextjs.org/', // default value
   }) : super(key: key);
 
   @override
@@ -143,7 +154,7 @@ class PurplePackage extends StatelessWidget {
       child: Row(
         children: [
           SvgPicture.asset(
-            'assets/svg/directory.svg',
+            icon,
             width: 20,
             height: 20,
           ),
