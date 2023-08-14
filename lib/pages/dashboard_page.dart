@@ -16,6 +16,7 @@ class DashboardPage extends StatelessWidget {
     return Scaffold(
       appBar: Navbar(),
       body: Container(
+        // height: 900,
         color: Colors.grey[200], // Adjust the shade of grey as needed
         child: Center(
           child: Column(
@@ -37,6 +38,19 @@ class DashboardPage extends StatelessWidget {
                     Column(
                       children: [
                         RightSidebar(),
+                        // Expanded(
+                        //   // height: 50,
+                        //   child: ListView(
+                        //     shrinkWrap: true,
+                        //     scrollDirection: Axis.vertical,
+                        //     children: [
+                        //       Text("data"),
+                        //       Text("data"),
+                        //       Text("data"),
+                        //       Text("data")
+                        //     ],
+                        //   ),
+                        // )
                       ],
                     ),
                   ],
