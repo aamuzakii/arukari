@@ -6,6 +6,7 @@ import 'package:arukari/widgets/icon_with_link.dart';
 import 'package:arukari/widgets/lucy.dart';
 import 'package:arukari/widgets/middle_section.dart';
 import 'package:arukari/widgets/common/navbar.dart';
+import 'package:arukari/widgets/searchbar.dart';
 import 'package:arukari/widgets/sidebar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -74,8 +75,9 @@ class Foo extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.all(4.0),
                       decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.5),
                         border: Border.all(
-                          color: const Color(0xff123123),
+                          color: Constants.greySeven,
                           width: 1.0,
                         ),
                       ),
@@ -84,7 +86,8 @@ class Foo extends StatelessWidget {
                           IconWithLinkPurple(
                               label: 'Directory',
                               icon: 'assets/svg/column.svg'),
-                          Container(child: Text("Org chart")),
+                          IconWithLinkPurple(
+                              label: 'Org chart', icon: 'assets/svg/org.svg'),
                         ],
                       ),
                     ),
@@ -101,6 +104,7 @@ class Foo extends StatelessWidget {
                       width: 20,
                       height: 20,
                     ),
+                    Expanded(child: SearchBar())
                   ],
                 ),
                 DataTable(
