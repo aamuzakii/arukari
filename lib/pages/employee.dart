@@ -48,31 +48,29 @@ class Foo extends StatefulWidget {
 }
 
 class _FooState extends State<Foo> {
-  List<Employee> employees = [];
+  Future<List<Employee>>? futureEmployees;
 
   @override
   void initState() {
     super.initState();
-    fetchData();
+    futureEmployees = fetchData();
   }
 
-  Future<void> fetchData() async {
+  Future<List<Employee>> fetchData() async {
     final response =
         await http.get(Uri.parse('http://localhost:3000/api/employees'));
 
     if (response.statusCode == 200) {
       final List<dynamic> jsonData = json.decode(response.body);
-      setState(() {
-        employees = jsonData.map((data) {
-          return Employee(
-            name: data['name'],
-            id: data['id'],
-            organization: data['organization'],
-            position: data['position'],
-            email: data['email'],
-          );
-        }).toList();
-      });
+      return jsonData.map((data) {
+        return Employee(
+          name: data['name'],
+          id: data['id'],
+          organization: data['organization'],
+          position: data['position'],
+          email: data['email'],
+        );
+      }).toList();
     } else {
       throw Exception('Failed to load data');
     }
@@ -143,27 +141,38 @@ class _FooState extends State<Foo> {
                   ],
                 ),
               ),
-              DataTable(
-                dataRowColor:
-                    MaterialStateColor.resolveWith((states) => Colors.white),
-                headingRowColor: MaterialStateColor.resolveWith(
-                    (states) => Constants.f1f5f9),
-                columns: [
-                  DataColumn(label: Text('Employee Name')),
-                  DataColumn(label: Text('Employee ID')),
-                  DataColumn(label: Text('Organization')),
-                  DataColumn(label: Text('Job Position')),
-                  DataColumn(label: Text('Email')),
-                ],
-                rows: employees.map((employee) {
-                  return DataRow(cells: [
-                    DataCell(Text(employee.name)),
-                    DataCell(Text(employee.id)),
-                    DataCell(Text(employee.organization)),
-                    DataCell(Text(employee.position)),
-                    DataCell(Text(employee.email)),
-                  ]);
-                }).toList(),
+              FutureBuilder<List<Employee>>(
+                future: futureEmployees,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return CircularProgressIndicator(); // Show loading indicator
+                  } else if (snapshot.hasError) {
+                    return Text('Error: ${snapshot.error}');
+                  } else {
+                    return DataTable(
+                      dataRowColor: MaterialStateColor.resolveWith(
+                          (states) => Colors.white),
+                      headingRowColor: MaterialStateColor.resolveWith(
+                          (states) => Constants.f1f5f9),
+                      columns: [
+                        DataColumn(label: Text('Employee Name')),
+                        DataColumn(label: Text('Employee ID')),
+                        DataColumn(label: Text('Organization')),
+                        DataColumn(label: Text('Job Position')),
+                        DataColumn(label: Text('Email')),
+                      ],
+                      rows: snapshot.data!.map((employee) {
+                        return DataRow(cells: [
+                          DataCell(Text(employee.name)),
+                          DataCell(Text(employee.id)),
+                          DataCell(Text(employee.organization)),
+                          DataCell(Text(employee.position)),
+                          DataCell(Text(employee.email)),
+                        ]);
+                      }).toList(),
+                    );
+                  }
+                },
               ),
               FooterPaginationControl()
             ],
