@@ -14,7 +14,6 @@ class ButtonList extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 3),
             child: TextButton(
               onPressed: () {
-                // window.open('/login', '_blank');
                 Navigator.pushNamed(context, button.url);
               },
               style: TextButton.styleFrom(
