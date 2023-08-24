@@ -29,6 +29,7 @@ environment:
 dependencies:
   google_fonts: ^2.1.0
   flutter_svg: ^0.22.0
+  http: any
   flutter:
     sdk: flutter
 
