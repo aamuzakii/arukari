@@ -25,7 +25,7 @@ class LucyWidget extends StatelessWidget {
       ButtonConfig(
         label: ' Request time off',
         onPress: () {
-          // Handle ID Karyawan Sign In button press
+          Navigator.pushReplacementNamed(context, '/my-info/time-off');
         },
       ),
     ];

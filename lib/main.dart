@@ -5,6 +5,7 @@ import 'package:arukari/pages/employee.dart';
 import 'package:arukari/pages/live_attendance_page.dart';
 import 'package:arukari/pages/login_page.dart';
 import 'package:arukari/pages/my_info_page.dart';
+import 'package:arukari/pages/time_off.dart';
 import 'package:arukari/pages/timesheet.dart';
 import 'package:arukari/widgets/scrollable.dart';
 import 'package:flutter/material.dart';
@@ -24,14 +25,15 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      title: 'Navigation Example',
+      title: 'Aruna Talenta Navigation',
       initialRoute: '/',
       routes: {
         '/': (context) => LoginPage(),
         '/about': (context) => const AboutPage(),
         '/dashboard': (context) => const DashboardPage(),
         '/live-attendance': (context) => const LiveAttendancePage(),
-        '/my-info': (context) => MyInfoPage(),
+        '/my-info/index': (context) => MyInfoPage(),
+        '/my-info/time-off': (context) => TimeOff(),
         '/employee': (context) => EmployeeTable(),
         '/timesheet/time-tracker': (context) => TimeSheet(),
         '/foo': (context) => const CustomScrollViewWidget(),
