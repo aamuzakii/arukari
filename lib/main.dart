@@ -5,6 +5,7 @@ import 'package:arukari/pages/employee.dart';
 import 'package:arukari/pages/live_attendance_page.dart';
 import 'package:arukari/pages/login_page.dart';
 import 'package:arukari/pages/my_info_page.dart';
+import 'package:arukari/pages/timesheet.dart';
 import 'package:arukari/widgets/scrollable.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         '/live-attendance': (context) => const LiveAttendancePage(),
         '/my-info': (context) => MyInfoPage(),
         '/employee': (context) => EmployeeTable(),
+        '/timesheet/time-tracker': (context) => TimeSheet(),
         '/foo': (context) => const CustomScrollViewWidget(),
       },
     );
