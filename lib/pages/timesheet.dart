@@ -32,10 +32,8 @@ class TimeSheet extends StatelessWidget {
                           child: Column(
                             children: const [
                               Breadcrumb(),
-                              // Text("Employees / Abdullah Al Muzaki / General"),
-                              BigText("Personal", 30,
+                              BigText("Time Tracker", 30,
                                   fontWeight: FontWeight.w600),
-                              Expanded(child: MyTabbedPage())
                             ],
                           ),
                         ),
@@ -59,24 +57,11 @@ class Breadcrumb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const LinkText(
-          text: "Employees",
-          url: "https://github.com/",
-        ),
-        Container(margin: const EdgeInsets.all(8), child: const Text("/")),
-        const LinkText(
-          text: "Abdullah Al Muzaki",
-          url: "https://github.com/",
-        ),
-        Container(margin: const EdgeInsets.all(8), child: const Text("/")),
-        const LinkText(
-          text: "General",
-          url: "https://github.com/",
-        ),
-      ],
-    );
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+      const LinkText(
+        text: "Timesheet",
+        url: "https://github.com/",
+      )
+    ]);
   }
 }
