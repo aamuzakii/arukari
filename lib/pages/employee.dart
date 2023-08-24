@@ -150,7 +150,15 @@ class _FooState extends State<Foo> {
                     return Text('Error: ${snapshot.error}');
                   } else {
                     return Container(
+                      margin: EdgeInsets.symmetric(horizontal: 24.0),
                       width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
+                        border: Border.all(
+                          color: Color.fromARGB(255, 161, 161, 161),
+                          width: 1.0,
+                        ),
+                      ),
                       child: DataTable(
                         dataRowColor: MaterialStateColor.resolveWith(
                             (states) => Colors.white),
@@ -219,6 +227,39 @@ class ChevronButton extends StatelessWidget {
   }
 }
 
+class SmallInput extends StatefulWidget {
+  @override
+  _SmallInputState createState() => _SmallInputState();
+}
+
+class _SmallInputState extends State<SmallInput> {
+  TextEditingController _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 45, // Set the width of the input
+      height: 30,
+      child: TextField(
+        textAlignVertical: TextAlignVertical.center,
+        style: TextStyle(fontSize: 12),
+        cursorHeight: 10,
+        controller: _controller,
+        decoration: InputDecoration(
+          // hintText: 'Enter text',
+          border: OutlineInputBorder(),
+        ),
+      ),
+    );
+  }
+}
+
 class FooterPaginationControl extends StatelessWidget {
   const FooterPaginationControl({
     Key? key,
@@ -230,26 +271,33 @@ class FooterPaginationControl extends StatelessWidget {
       children: [
         Text("data"),
         Expanded(child: Text("")),
-        Row(
-          children: [
-            ChevronButton(
-              onPressed: () {},
-              icon: Icons.first_page,
-            ),
-            ChevronButton(
-              onPressed: () {},
-              icon: Icons.chevron_left,
-            ),
-            Text("from 48"),
-            ChevronButton(
-              onPressed: () {},
-              icon: Icons.chevron_right,
-            ),
-            ChevronButton(
-              onPressed: () {},
-              icon: Icons.last_page,
-            ),
-          ],
+        Container(
+          margin: EdgeInsets.all(10.0),
+          child: Row(
+            children: [
+              ChevronButton(
+                onPressed: () {},
+                icon: Icons.first_page,
+              ),
+              ChevronButton(
+                onPressed: () {},
+                icon: Icons.chevron_left,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: SmallInput(),
+              ),
+              Text("from 48"),
+              ChevronButton(
+                onPressed: () {},
+                icon: Icons.chevron_right,
+              ),
+              ChevronButton(
+                onPressed: () {},
+                icon: Icons.last_page,
+              ),
+            ],
+          ),
         )
       ],
     );
@@ -280,7 +328,7 @@ class IconWithLinkPurple extends StatelessWidget {
             width: 20,
             height: 20,
           ),
-          Container(child: Text("Directory")),
+          Container(padding: EdgeInsets.all(4.0), child: Text("Directory")),
         ],
       ),
     );
