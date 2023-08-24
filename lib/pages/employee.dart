@@ -149,27 +149,30 @@ class _FooState extends State<Foo> {
                   } else if (snapshot.hasError) {
                     return Text('Error: ${snapshot.error}');
                   } else {
-                    return DataTable(
-                      dataRowColor: MaterialStateColor.resolveWith(
-                          (states) => Colors.white),
-                      headingRowColor: MaterialStateColor.resolveWith(
-                          (states) => Constants.f1f5f9),
-                      columns: [
-                        DataColumn(label: Text('Employee Name')),
-                        DataColumn(label: Text('Employee ID')),
-                        DataColumn(label: Text('Organization')),
-                        DataColumn(label: Text('Job Position')),
-                        DataColumn(label: Text('Email')),
-                      ],
-                      rows: snapshot.data!.map((employee) {
-                        return DataRow(cells: [
-                          DataCell(Text(employee.name)),
-                          DataCell(Text(employee.id)),
-                          DataCell(Text(employee.organization)),
-                          DataCell(Text(employee.position)),
-                          DataCell(Text(employee.email)),
-                        ]);
-                      }).toList(),
+                    return Container(
+                      width: double.infinity,
+                      child: DataTable(
+                        dataRowColor: MaterialStateColor.resolveWith(
+                            (states) => Colors.white),
+                        headingRowColor: MaterialStateColor.resolveWith(
+                            (states) => Constants.f1f5f9),
+                        columns: [
+                          DataColumn(label: Text('Employee Name')),
+                          DataColumn(label: Text('Employee ID')),
+                          DataColumn(label: Text('Organization')),
+                          DataColumn(label: Text('Job Position')),
+                          DataColumn(label: Text('Email')),
+                        ],
+                        rows: snapshot.data!.map((employee) {
+                          return DataRow(cells: [
+                            DataCell(Text(employee.name)),
+                            DataCell(Text(employee.id)),
+                            DataCell(Text(employee.organization)),
+                            DataCell(Text(employee.position)),
+                            DataCell(Text(employee.email)),
+                          ]);
+                        }).toList(),
+                      ),
                     );
                   }
                 },
