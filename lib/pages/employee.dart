@@ -244,6 +244,7 @@ class _SmallInputState extends State<SmallInput> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       width: 45, // Set the width of the input
       height: 30,
       child: TextField(
@@ -260,6 +261,35 @@ class _SmallInputState extends State<SmallInput> {
   }
 }
 
+class RedCircleWithIcon extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(left: 24),
+          width: 64,
+          height: 64,
+          decoration: BoxDecoration(
+            color: Color.fromARGB(255, 154, 16, 7),
+            shape: BoxShape.circle,
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(left: 24),
+          child: SvgPicture.asset(
+            'assets/svg/chat.svg',
+            width: 38,
+            height: 38,
+            color: Colors.white,
+          ),
+        )
+      ],
+    );
+  }
+}
+
 class FooterPaginationControl extends StatelessWidget {
   const FooterPaginationControl({
     Key? key,
@@ -269,7 +299,14 @@ class FooterPaginationControl extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text("data"),
+        Row(
+          children: [
+            RedCircleWithIcon(),
+            SizedBox(width: 100),
+            SmallInput(),
+            Text("from 478 rows"),
+          ],
+        ),
         Expanded(child: Text("")),
         Container(
           margin: EdgeInsets.all(10.0),
@@ -283,10 +320,7 @@ class FooterPaginationControl extends StatelessWidget {
                 onPressed: () {},
                 icon: Icons.chevron_left,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: SmallInput(),
-              ),
+              SmallInput(),
               Text("from 48"),
               ChevronButton(
                 onPressed: () {},
