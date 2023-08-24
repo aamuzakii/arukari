@@ -3,7 +3,7 @@ import 'package:arukari/widgets/big_text.dart';
 import 'package:arukari/widgets/common/navbar.dart';
 import 'package:arukari/widgets/link_text.dart';
 import 'package:arukari/widgets/my_info/tabbed_widget.dart';
-import 'package:arukari/widgets/my_info/sidebar.dart';
+import 'package:arukari/widgets/timesheet/sidebar.dart';
 import 'package:flutter/material.dart';
 
 class TimeSheet extends StatelessWidget {
