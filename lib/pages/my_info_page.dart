@@ -17,7 +17,7 @@ class MyInfoPage extends StatelessWidget {
           Navbar(),
           Expanded(
             child: Container(
-              color: Constants.twoE,
+              color: Colors.grey[200],
               child: Padding(
                 padding: const EdgeInsets.all(24.0),
                 child: Row(
