@@ -75,13 +75,13 @@ class TimeOff extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      // width: double.infinity,
+                      width: double.infinity,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ThreeMiddleText("TIME OFF REQUEST"),
-                          ThreeMiddleText("DELEGATION", isMiddle: false),
+                          ThreeMiddleText("DELEGATION", isMiddle: true),
                           ThreeMiddleText("TIME OFF TAKEN")
                         ],
                       ),
@@ -109,9 +109,33 @@ class ThreeMiddleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 50),
-      child: BigText(label, 15, fontWeight: FontWeight.w800),
+    return Container(
+      child: isMiddle
+          ? Container(
+              padding: EdgeInsets.symmetric(horizontal: 50),
+              decoration: BoxDecoration(
+                border: Border.symmetric(
+                  vertical: BorderSide(
+                    color: Constants.twoE, // Set your desired border color here
+                    width: 4, // Set the border width
+                  ),
+                ),
+              ),
+              child: BigText(
+                label,
+                15,
+                fontWeight: FontWeight.w800,
+                color: Constants.redMekariHex,
+              ),
+            )
+          : Container(
+              padding: EdgeInsets.symmetric(horizontal: 50),
+              child: BigText(
+                label,
+                15,
+                fontWeight: FontWeight.w800,
+                color: Color.fromARGB(255, 129, 129, 129),
+              )),
     );
   }
 }
