@@ -63,11 +63,29 @@ class TimeOff extends StatelessWidget {
                     Column(
                       children: [
                         Text("ANNUAL LEAVE "),
-                        Text("5"),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            BigText("5 ", 50),
+                            Text("days "),
+                          ],
+                        ),
                         Text("."),
                       ],
                     ),
-                    Text("tiga"),
+                    Container(
+                      // width: double.infinity,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ThreeMiddleText("TIME OFF REQUEST"),
+                          ThreeMiddleText("DELEGATION", isMiddle: false),
+                          ThreeMiddleText("TIME OFF TAKEN")
+                        ],
+                      ),
+                    ),
                     Text("control"),
                     Text("table"),
                   ],
@@ -75,6 +93,25 @@ class TimeOff extends StatelessWidget {
           )),
         ],
       ),
+    );
+  }
+}
+
+class ThreeMiddleText extends StatelessWidget {
+  final String label;
+  final bool isMiddle;
+
+  const ThreeMiddleText(
+    this.label, {
+    this.isMiddle = false,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 50),
+      child: BigText(label, 15, fontWeight: FontWeight.w800),
     );
   }
 }
